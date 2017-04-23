@@ -1,0 +1,374 @@
+/*通用底部样式*/
+@colorDarkGray: #4a4a4a;
+@colorMiddleGray: #ababab;
+@colorLightGray: #dddddd;
+@colorBlue: #0392d4;
+@colorBlack: #000;
+@colorWhite: #fff;
+@clickEffect: hsla(0, 0%, 100%, 0.8);
+@clickColorBlue: #0994cc;
+
+
+* {
+  font-family: Arial, 'Microsoft YaHei';
+  font-size: 14px;
+}
+
+div, span, h1, p, img, ol, ul, li, form, label, table, tbody, tfoot, thead, tr, th, td, footer, header, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+  tap-highlight-color: transparent;
+  appearance: none;
+
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+}
+
+.nav{
+  width: 100%;
+
+  .jf_nav {
+
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    height: 70px;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: white;
+    background-color: rgba(255,255,255,0.8);
+    border-bottom: 1px solid #ddd;
+
+    &>div{
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* jf logo*/
+    .jf_nav_logo {
+      position: relative;
+      float: left;
+      display: inline-block;
+      width: 113px;
+      height: 65px;
+      background-image: url(../images/jf_main_logo.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      &:hover{
+        filter: alpha(opacity=70);
+        transition: opacity .2s;
+        opacity: .7;
+      }
+    }
+    /* jf login*/
+    .jf_nav_login {
+      display: inline-block;
+      height: 100%;
+      font-size: 14px;
+      position: relative;
+      line-height: 70px;
+      margin-left: 140px;
+      .login_btn {
+        display: inline-block;
+        padding: 0 25px;
+        line-height: 35px;
+        vertical-align: middle;
+        border-radius: 3px;
+        margin-right: 12px;
+        cursor: pointer;
+
+      }
+      .login_btn.company_login {
+        border: 1px solid @colorLightGray;
+        color: @colorDarkGray;
+        &:hover {
+          color: @colorBlue;
+          border: 1px solid @colorBlue;
+          transition: all ease-in-out .2s;
+        }
+      }
+      .login_btn.employee_login {
+        background: #10a6e2;
+        filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#10a6e2',endColorStr='#0081e2',gradientType='0');
+        background: -o-linear-gradient(left top, #10a6e2, #0081e2);
+        background: -moz-repeating-linear-gradient(left top, #10a6e2, #0081e2);
+        background: -webkit-linear-gradient(left top, #10a6e2, #0081e2);
+        background: linear-gradient(left top, #10a6e2, #0081e2);
+        border: 1px solid @colorBlue;
+        color: @colorWhite;
+        &:hover {
+          color: @clickEffect;
+          background-color: #0994cc;
+          transition: all ease-in-out .2s;
+        }
+        &:hover +.QR_code{
+          display: block;
+          top: 90px;
+          opacity: 1;
+          filter: alpha(opacity=100);
+          transition: opacity ,top 0.1s, 1s;
+        }
+
+      }
+
+      /*hove QR code*/
+      .QR_code {
+        display: none;
+        z-index: -1;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 250px;
+        height: 120px;
+        border: 1px solid @colorMiddleGray;
+        border-radius: 3px;
+        padding: 20px;
+        background-color: @colorWhite;
+        .triangle {
+          position: absolute;
+          top: -11px;
+          right: 90px;
+          width: 20px;
+          height: 20px;
+          border-left: 1px solid @colorMiddleGray;
+          border-top: 1px solid @colorMiddleGray;
+          background-color: @colorWhite;
+          transform: rotate(45deg);
+
+        }
+        .weixin, .app {
+          position: relative;
+          display: inline-block;
+          list-style-type: none;
+          text-align: center;
+          img {
+            width: 100px;
+            height: 100px;
+            padding: 0 10px;
+          }
+        }
+        .weixin:after {
+          content: '-员工微信端-';
+          position: absolute;
+          top: 90px;
+          left: 20px;
+          color: #4a4a4a;
+
+        }
+        .app:after {
+          content: '-员工APP端-';
+          position: absolute;
+          top: 90px;
+          left: 20px;
+          color: #4a4a4a;
+
+        }
+      }
+      /*nav num*/
+      .nav_contact {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        font-weight: bold;
+        vertical-align: middle;
+        padding: 0 25px;
+        a {
+          font-size: 20px;
+          color: @colorDarkGray;
+          cursor: pointer;
+        }
+        .consultation{
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          vertical-align: middle;
+          background-image: url("../images/jf_main_staff.png");
+          &:hover {
+            transition: all ease-in-out .2s;
+            background-image: url("../images/jf_main_staff_blue.png");
+          }
+        }
+        .mail{
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          vertical-align: middle;
+          background-image: url("../images/jf_main_staff.png");
+          background-repeat: no-repeat;
+          padding: 0 5px;
+          &:hover {
+            transition: all ease-in-out .2s;
+            background-image: url("../images/jf_main_staff_blue.png");
+          }
+        }
+        .phone{
+
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          padding: 0 5px;
+          vertical-align: middle;;
+          background: url("../images/jf_main_phone.png") no-repeat;
+          &:hover {
+            transition: all ease-in-out .2s;
+            background-image: url("../images/jf_main_phone_blue.png");
+          }
+          &:hover +.phone_box{
+            display: block;
+            top: 90px;
+            opacity: 1;
+            filter: alpha(opacity=100);
+            transition: opacity ,top 0.1s, 1s;
+          }
+
+        }
+        .phone_box{
+          display: none;
+          z-index: -1;
+          opacity: 0;
+          filter: alpha(opacity=0);
+          position: absolute;
+          top: 50px;
+          right: -35px;
+          width: 220px;
+          height: 100px;
+          border: 1px solid @colorMiddleGray;
+          border-radius: 3px;
+          background-color: @colorWhite;
+          .triangle{
+            position: absolute;
+            top: -11px;
+            right: 70px;
+            width: 20px;
+            height: 20px;
+            border-left: 1px solid @colorMiddleGray;
+            border-top: 1px solid @colorMiddleGray;
+            background-color: @colorWhite;
+            transform: rotate(45deg);
+          }
+          .num{
+            font-size: 18px;
+            font-weight: 700;
+            height: 30px;
+            line-height: 50px;
+            padding-left: 15px;
+            span{
+              font-size: 14px;
+              font-weight: normal;
+            }
+          }
+          .tip{
+            line-height: 30px;
+          }
+        }
+      }
+    }
+    /* jf sort*/
+    .jf_nav_content {
+      display: inline-block;
+      float: left;
+      height: 100%;
+      font-size: 14px;
+      width: 45%;
+      text-align: right;
+      padding-right: 7px;
+      ul {
+        line-height: 70px;
+        list-style-type: none;
+        height: 100%;
+
+        .show{
+          border-bottom: solid 1px @colorBlue;
+          a{
+            color: @colorBlue;
+          }
+
+        }
+
+        li {
+          display: inline-block;
+          padding: 0 20px;
+          a {
+            position: relative;
+            display: inline-block;
+            line-height: 70px;
+            color: #4a4a4a;
+            &:hover {
+              color: @colorBlue;
+              cursor: pointer;
+              transition: all ease-in-out .2s;
+            }
+            &:active{
+              color: @colorBlue;
+              cursor: pointer;
+              transition: all ease-in-out .2s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .jf_nav_tab{
+    width: 100%;
+    padding-bottom: 70px;
+    display: block;
+  }
+}
+
+@media screen and(max-width: 1374px) {
+
+  .nav .jf_nav {
+    height: 55px;
+  }
+  .nav .jf_nav .jf_nav_logo {
+    height: 45px;
+    background-size: 90%;
+  }
+  .nav .jf_nav .jf_nav_content ul {
+    line-height: 55px;
+    list-style-type: none;
+    height: 100%;
+  }
+  .nav .jf_nav .jf_nav_content ul li a {
+   line-height: 55px;
+
+  }
+  .nav .jf_nav .jf_nav_login {
+     line-height: 55px;
+   }
+  .nav .jf_nav .jf_nav_login .login_btn {
+    display: inline-block;
+    padding: 0 25px;
+    line-height: 30px;
+  }
+  .nav .jf_nav .jf_nav_login .login_btn.employee_login:hover+.QR_code {
+    top: 70px;
+  }
+  .nav .jf_nav .jf_nav_login .nav_contact .phone:hover+.phone_box {
+    top: 70px;
+  }
+  .nav .jf_nav_tab {
+    padding-bottom: 55px;
+  }
+
+}

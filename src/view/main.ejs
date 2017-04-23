@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../component/basic/metaNormal.ejs') %>
+    <title>嘉福平台—一站式福利薪酬管理平台</title>
+</head>
+<body>
+
+<!--导航-->
+<%- include('../component/basic/top_nav.ejs',{
+"tabone":true,
+"tabtwo":false,
+"tabthree":false,
+"tabfour":false,
+"tabfive":false,
+"homepage":false
+
+}) %>
+
+<!--侧边导航-->
+<%- include('../component/basic/side_nav.ejs')%>
+
+
+<!--中间主体部分-->
+<div id="homepage_scroll_move">
+    <div id="content_scroll">
+
+        <!--第一页-->
+        <%- include('../component/homepage/pageone.ejs')%>
+        <!--第二页-->
+
+        <%- include('../component/homepage/pagetwo.ejs')%>
+
+        <!--第三页-->
+
+        <%- include('../component/homepage/pagethree.ejs')%>
+
+        <!--第四页-->
+
+        <%- include('../component/homepage/pagefour.ejs')%>
+        <!--第五页-->
+
+        <%- include('../component/homepage/pagefive.ejs')%>
+        <!--第六页-->
+
+        <%- include('../component/homepage/pagesex.ejs')%>
+        <!--第七页-->
+
+        <%- include('../component/homepage/pageseven.ejs')%>
+
+    </div>
+
+</div>
+
+
+</body>
+
+<script>
+    /*鼠标滚动事件*/
+    var scrollBlockMove = {
+
+        init: function (details) {//主要初始化
+
+            var _this = this;
+
+            _this.thisPosition = 0;//初始化现在在第几个页面
+
+            _this.fn = details;//初始化配置
+
+            _this.isXMove = 1;//是否需要移动
+
+            _this.isIE = _this.isIe9(); //是不是ie浏览器
+
+            if (_this.isIE) {
+
+                _this.initPoint();//增加右侧导航
+
+                //绑定鼠标滚动事件
+                addEventListener('mousewheel', function (e) {//ie,chrome,
+
+                    if (_this.isXMove) {
+
+                        norXMove();
+
+                        _this.changeScroll(e.wheelDelta)
+
+                    }
+
+                }, false);
+
+                addEventListener('DOMMouseScroll', function (e) {//ff
+
+                    if (_this.isXMove) {
+
+                        norXMove();
+
+                        _this.changeScroll(0 - e.detail)
+
+                    }
+
+                }, false);
+
+            }
+
+            else{
+
+                document.getElementById('homepage_scroll_move').style.overflow='auto'//ie版本下做到可拖动
+
+            }
+
+            //延迟在变化
+            function norXMove() {
+
+                _this.isXMove = 0;
+
+                setTimeout(function () {
+
+                    _this.isXMove = 1;
+
+                }, 300);
+
+            }
+
+        },
+
+        initPoint: function () {//初始化右侧导航点
+
+
+            //新建导航点元素
+            var obj = document.createElement('div');
+
+            obj.id = 'content_point';
+
+            var thisNum = document.getElementById('content_scroll').getElementsByClassName('content_block').length;
+
+            //通过有几个页面，设置几个导航点
+            var thisInnerHtml = '<div>';
+
+            for (var i = 0; i < thisNum; i++) {
+
+                if (i == 0) {
+
+                    thisInnerHtml += '<span class="show"></span>';
+                }
+
+                else {
+
+                    thisInnerHtml += '<span></span>';
+
+                }
+
+            }
+
+            thisInnerHtml += '</div>';
+
+            obj.innerHTML = thisInnerHtml;
+
+            //添加元素
+            document.getElementById('homepage_scroll_move').appendChild(obj);
+
+            //每个导航点添加监听
+            var allPoint = document.getElementById('content_point').getElementsByTagName('span');
+
+            for (var i = 0; i < allPoint.length; i++) {
+
+                allPoint[i].addEventListener('click', this.clickPoint, false)
+
+            }
+
+        },
+
+        clickPoint: function () {//绑定的点击事件
+
+            var allPoint = document.getElementById('content_point').getElementsByTagName('div')[0].getElementsByTagName('span');
+
+            //返回点击的是第几个元素
+            for (var i = 0; i < allPoint.length; i++) {
+
+                if (this == allPoint[i]) {
+
+                    break;
+
+                }
+
+            }
+
+            var thisNeedMove = i + scrollBlockMove.thisPosition;//需要移动的位置
+
+            //计算移动的绝对值
+            if (thisNeedMove != 0) {
+
+                for (var i = 0; i < Math.abs(thisNeedMove); i++) {
+
+                    scrollBlockMove.changeScroll(-thisNeedMove);
+
+                }
+
+            }
+
+        },
+
+        changeScroll: function (position) {//改变位置，参数正负为是否上下移动
+
+            var pointBlock = document.getElementById('content_point');
+
+            var changeBlock = document.getElementById('content_scroll');
+
+            var _this = this;
+
+            //如果向下滚动，则不能超过最大页面个数
+            if (parseFloat(position) < 0) {
+
+                var thisNum = document.getElementById('content_scroll').getElementsByClassName('content_block').length - 1;
+
+                _this.thisPosition > -thisNum ? _this.thisPosition-- : _this.thisPosition = -thisNum;
+
+            }
+
+            //如果向上滚动，不能超过最上面
+            else if (parseFloat(position) > 0) {
+
+                _this.thisPosition < 0 ? _this.thisPosition++ : _this.thisPosition = 0;
+
+            }
+
+            _this.changeTransform(document.getElementById('content_scroll'), 100 * this.thisPosition + '%');//变化到指定位置
+
+            //变化点的位置
+            pointBlock.getElementsByClassName('show')[0].className = pointBlock.getElementsByClassName('show')[0].className.replace('show', '');
+
+            pointBlock.getElementsByTagName('span')[-this.thisPosition].className += ' show';
+
+            //变化页面的位置
+            changeBlock.getElementsByClassName('content_show')[0].className = changeBlock.getElementsByClassName('content_show')[0].className.replace(' content_show', '');
+
+            changeBlock.getElementsByClassName('content_block')[-this.thisPosition].className += ' content_show';
+
+        },
+
+        changeTransform: function (ele, num) {//位置变化的方法
+
+            ele.style.transform = 'translateY(' + num + ')';
+
+            ele.style.oTransform = 'translateY(' + num + ')';
+
+            ele.style.mozTransform = 'translateY(' + num + ')';
+
+            ele.style.webkitTransform = 'translateY(' + num + ')';
+
+            ele.style.msTransform = 'translateY(' + num + ')'
+
+        },
+
+        isIe9: function () {
+
+            {
+                var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+
+                var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
+
+                var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera; //判断是否IE浏览器
+
+                if (isIE) {
+
+                    var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+
+                    reIE.test(userAgent);
+
+                    var fIEVersion = parseFloat(RegExp["$1"]);
+
+                    //判断是否版本小于ie9
+                    if (fIEVersion <= 9) {
+
+                        return false;
+
+                    }
+                    else {
+
+                        return true;
+                    }
+                }
+                else {
+
+                    return true;
+                }
+
+            }
+
+        }
+
+
+    };
+
+    var jfMouseMove = {
+
+        "v": {
+
+            "isMove": false
+
+        },
+
+        init: function () {
+
+            this.allEle=document.getElementsByClassName('jfMouseMove');//缓存所有元素
+
+            addEventListener('mousemove', this.mouseMove.bind(this), false);
+
+            this.isMove=1;//延迟执行
+
+        },
+
+        mouseMove: function (event) {
+//事件兼容性
+
+            var _this=this;
+            //是否开启&&是否不是ie9以下
+            if (this.v.isMove && scrollBlockMove.isIE && this.isMove==1) {
+
+                this.isMove=0;
+
+                setTimeout(function(){
+
+                    _this.isMove=1;
+
+                },100);
+
+                var event = window.event || event;
+
+                //计算偏移值=屏幕中心点-鼠标位置
+                var changeDistanceX = -event.pageX + document.body.clientWidth / 2;
+
+                var changeDistanceY = -event.pageY + document.body.clientHeight / 2;
+
+
+
+                //所有移动的元素
+                var allMoveEle = this.allEle;
+
+                //初始化移动的权重
+                var distanceW = 1;
+
+                //  console.log(1);
+
+                for (var i = 0; i < allMoveEle.length; i++) {
+
+                    //获取当前元素权重
+                    distanceW = allMoveEle[i].getAttribute('data-distanceW');
+
+                    //设置偏移
+                    this.transformAll(allMoveEle[i], changeDistanceX / 70 * distanceW, changeDistanceY / 70 * distanceW);
+
+                    //初始化偏移
+                    distanceW = 1;
+
+                }
+
+            }
+
+        },
+
+        //通用变化兼容性
+        transformAll: function (ele, disX, disY) {
+
+            setTimeout(function(){
+                ele.style.transform = 'translate(' + disX + 'px,' + disY + 'px)';
+
+                ele.style.webkitTransform = 'translate(' + disX + 'px,' + disY + 'px)';
+
+                ele.style.oTransform = 'translate(' + disX + 'px,' + disY + 'px)';
+
+                ele.style.msTransform = 'translate(' + disX + 'px,' + disY + 'px)';
+
+                ele.style.mozTransform = 'translate(' + disX + 'px,' + disY + 'px)';
+
+            },200);
+        }
+    };
+
+
+    scrollBlockMove.init();
+
+
+   addEventListener("webkitAnimationEnd",function(){
+        jfMouseMove.v.isMove=true;
+        jfMouseMove.init()
+
+    },false);
+
+   addEventListener("animationEnd",function(){
+        jfMouseMove.v.isMove=true;
+        jfMouseMove.init()
+
+    },false);
+
+//wave canvas
+    var wave = (function () {
+        var ctx;
+        var waveImage;
+        var canvasWidth;
+        var canvasHeight;
+        var needAnimate = false;
+
+        function init (callback) {
+            var wave = document.getElementById('wave');
+            var canvas = document.createElement('canvas');
+            if (!canvas.getContext) return;
+            ctx = canvas.getContext('2d');
+            canvasWidth = wave.offsetWidth;
+            canvasHeight = wave.offsetHeight;
+            canvas.setAttribute('width', canvasWidth);
+            canvas.setAttribute('height', canvasHeight);
+            wave.appendChild(canvas);
+            waveImage = new Image();
+            waveImage.onload = function () {
+                waveImage.onload = null;
+                callback();
+            };
+            waveImage.src = 'images/wave.png';
+        }
+
+        function animate () {
+            var waveX = 0;
+            var waveY = 0;
+            var waveX_min = -203;
+            var waveY_max = canvasHeight * 0.68;
+            var requestAnimationFrame =
+                    window.requestAnimationFrame ||
+                    window.mozRequestAnimationFrame ||
+                    window.webkitRequestAnimationFrame ||
+                    window.msRequestAnimationFrame ||
+                    function (callback) { window.setTimeout(callback, 1000 / 60); };
+            function loop () {
+                ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+                if (!needAnimate) return;
+                if (waveY < waveY_max) waveY += 1.5;
+                if (waveX < waveX_min) waveX = 0; else waveX -= 3;
+
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.beginPath();
+                ctx.arc(canvasWidth/2, canvasHeight/2, canvasHeight/2, 0, Math.PI*2, true);
+                ctx.closePath();
+                ctx.fill();
+
+                ctx.globalCompositeOperation = 'source-in';
+                ctx.drawImage(waveImage, waveX, canvasHeight - waveY);
+
+                requestAnimationFrame(loop);
+            }
+            loop();
+        }
+
+        function start () {
+            if (!ctx) return init(start);
+            needAnimate = true;
+            setTimeout(function () {
+                if (needAnimate) animate();
+            }, 3500);
+        }
+        function stop () {
+            needAnimate = false;
+        }
+        return {start: start, stop: stop};
+    }());
+    wave.start();
+
+
+
+
+
+        function mobilePageJump() {
+
+
+            if (browser.supplier.mobile) {
+
+                window.location.href = "homepage_mobile.html";
+            }
+
+        }
+
+        mobilePageJump();
+
+
+</script>
+</html>

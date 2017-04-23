@@ -1,0 +1,57 @@
+@colorDarkGray: #4a4a4a;
+@colorMiddleGray: #ababab;
+@colorLightGray: #dddddd;
+@colorBlue: #0392d4;
+@colorBlack: #000;
+@colorWhite: #fff;
+@clickEffect: hsla(0, 0%, 100%, 0.8);
+@clickColorBlue: #0994cc;
+
+
+/*侧导航*/
+.side_navigation {
+  position: fixed;
+  width: 140px;
+  right: 0;
+  top: 32%;
+  text-align: center;
+  z-index: 10;
+  cursor: pointer;
+  .contact {
+    display: block;
+    .sevice_staff {
+      position: relative;
+      top: 5px;
+      background-image: url("../images/jf_nav_girl.png");
+      width: 140px;
+      height: 147px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .consultant {
+      width: 110px;
+      height: 40px;
+      margin: 0 auto;
+      border-radius: 5px;
+      line-height: 40px;
+      color: @colorWhite;
+      z-index: -1;
+      font-size: 18px;
+      background-color: @colorBlue;
+      &:hover {
+        background: -o-linear-gradient(left top,#10a6e2,#0081e2);
+        background: -moz-linear-gradient(left top,#10a6e2,#0081e2);
+        background: -webkit-linear-gradient(left top,#10a6e2,#0081e2);
+        background: linear-gradient(left top,#10a6e2,#0081e2);
+        transition: all .2s;
+      }
+    }
+    &:hover:after{
+      content: url("../images/jf_nav_girl_think.png");
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+}
