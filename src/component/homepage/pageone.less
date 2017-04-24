@@ -1,0 +1,462 @@
+@colorDarkGray: #4a4a4a;
+@colorMiddleGray: #ababab;
+@colorLightGray: #dddddd;
+@colorBlue: #0392d4;
+@colorBlack: #000;
+@colorWhite: #fff;
+@clickEffect: hsla(0, 0%, 100%, 0.8);
+@clickColorBlue: #0994cc;
+
+/*首页框架样式*/
+#homepage_scroll_move {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+
+  #content_scroll {
+
+    width: 100%;
+    height: 100%;
+    transition: transform .5s;
+
+    & > div.content_block {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+
+  #content_point {
+    position: fixed;
+    width: 20px;
+    left: 15px;
+    top: 45%;
+
+    div {
+
+      transform: translateY(-50%);
+
+      span {
+
+
+        display: block;
+        background-color: #cacaca;
+        height: 12px;
+        width: 12px;
+        margin: 20px auto;
+        border-radius: 8px;
+        /*border: 1px solid @colorLightGray;*/
+        /*ox-shadow: 0 0 10px rgba(0,0,0,.8);*/
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover{
+          box-shadow: 0 0 5px @colorLightGray;
+
+        }
+        &.show{
+          /*transform: scale(1.5,1.5);*/
+          background-color: @colorBlue;
+        }
+      }
+    }
+  }
+
+}
+
+/*page1_banner*/
+.jf_page1_banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  .banner_bg {
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    .banner_content {
+      position: absolute;
+      width: 1073px;
+      top: 52%;
+      left: 50%;
+      margin: -252px 0 0 -550px;
+      .title {
+        text-align: center;
+        font-weight: lighter;
+        animation: titleShowP1 2s ease-in-out ;
+        animation-play-state: paused;
+        @-webkit-keyframes titleShowP1 {
+          from {
+            filter: alpha(opacity=0);
+            opacity: 0;
+          }
+          to {
+            filter: alpha(opacity=100);
+            opacity: 1;
+          }
+        }
+        @keyframes titleShowP1 {
+          from {
+            filter: alpha(opacity=0);
+            opacity: 0;
+          }
+          to {
+            filter: alpha(opacity=100);
+            opacity: 1;
+          }
+        }
+        p {
+          font-size: 50px;
+          font-family: "Microsoft YaHei" !important;
+        }
+        p + p {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+      }
+      /*btn*/
+      .register_btn {
+        display: block;
+        width: 120px;
+        height: 40px;
+        border-radius: 5px;
+        filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#10a6e2, endcolorstr=#0081e2, gradientType=1);
+        background:#10a6e2;
+        background: -o-linear-gradient(left top, #10a6e2, #0081e2);
+        background: -moz-repeating-linear-gradient(left top, #10a6e2, #0081e2);
+        background: -webkit-linear-gradient(left top, #10a6e2, #0081e2);
+        background: linear-gradient(left top, #10a6e2, #0081e2);
+        border: 1px solid @colorBlue;
+        color: @colorWhite;
+        line-height: 40px;
+        text-align: center;
+        font-size: 16px;
+        margin: 0 auto 20px;
+        cursor: pointer;
+        user-select: none;
+        animation: titleShowBtn 2s ease-in-out ;
+        animation-play-state: paused;
+        &:hover {
+          color: hsla(0, 0, 100%, .8);
+        }
+        @-webkit-keyframes titleShowBtn {
+          from {
+            filter: alpha(opacity=0);
+            opacity: 0;
+          }
+          to {
+            filter: alpha(opacity=100);
+            opacity: 1;
+          }
+        }
+        @keyframes titleShowBtn {
+          from {
+            filter: alpha(opacity=0);
+            opacity: 0;
+          }
+          to {
+            filter: alpha(opacity=100);
+            opacity: 1;
+          }
+        }
+      }
+      .molecule {
+        .jfMouseMove{
+          transition: transform 0.5s ease-out;
+          -moz-transition: transform 0.5s ease-out;
+        }
+        position: relative;
+        width: 1058px;
+        height: 339px;
+        animation: moleculeShowP1 2.5s ease-in-out ;
+        transform-origin: 50% 100%;
+        animation-play-state: paused;
+        @-webkit-keyframes  moleculeShowP1 {
+          from {
+            filter: alpha(opacity=0);
+            opacity: 0;
+            transform: scale(0,0) translateY(100%);
+          }
+          to {
+            filter: alpha(opacity=100);
+            opacity: 1;
+            transform: scale(1,1) translateY(0);
+          }
+        }
+        @keyframes moleculeShowP1 {
+          from {
+            filter: alpha(opacity=0);
+            opacity: 0;
+            transform: scale(0,0) translateY(100%);
+          }
+          to {
+            filter: alpha(opacity=100);
+            opacity: 1;
+            transform: scale(1,1) translateY(0);
+          }
+        }
+        .line_bg{
+          background-image: url("../images/line.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .small_circle{
+          background-image: url(../images/circle_small.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+        }
+        .mid_circle{
+          background-image: url(../images/circle_mid.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .leftone_circle{
+          background-image: url(../images/leftone.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          .advantage1 {
+            position: absolute;
+            top: 140px;
+            left: 265px;
+            font-size: 32px;
+            p {
+              width: 75px;
+              margin-left: 40px;
+              margin-top: 25px;
+              font-weight: Lighter !important;
+              color: #5f6167;
+            }
+          }
+        }
+
+        .lefttwo_circle{
+          background-image: url(../images/lefttwo.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          .advantage4 {
+            position: absolute;
+            top: 180px;
+            left: 448px;
+            font-size: 28px;
+            p {
+              width: 75px;
+              margin-left: 40px;
+              margin-top: 25px;
+              font-weight: Lighter !important;
+              color: #5f6167;
+            }
+          }
+        }
+
+        .leftthree_circle{
+          background-image: url(../images/leftthree.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          .advantage2 {
+            position: absolute;
+            top: 30px;
+            right: 338px;
+            font-size: 32px;
+            p {
+              width: 75px;
+              margin-left: 40px;
+              margin-top: 25px;
+              font-weight: Lighter !important;
+              color: #5f6167;
+            }
+          }
+        }
+        .leftfour_circle{
+          background-image: url(../images/leftfour.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          .advantage3 {
+            position: absolute;
+            top: 98px;
+            right: 148px;
+            font-size: 28px;
+            p {
+              width: 75px;
+              margin-left: 40px;
+              margin-top: 25px;
+              font-weight: Lighter !important;
+              color: #5f6167;
+            }
+          }
+
+        }
+      }
+      .ipad_bg{
+        position: absolute;
+        bottom: -35%;
+        left: -25%;
+        background-image: url("../images/jf_page1_ipad.png");
+        width: 1548px;
+        height: 502px;
+        background-size: 100%;
+        z-index: -1;
+        animation: ipadShowP1 2s ease-in-out;
+        animation-play-state: paused;
+        @-webkit-keyframes ipadShowP1 {
+          from {
+            filter: alpha(opacity=0);
+            opacity: 0;
+          }
+          to {
+            filter: alpha(opacity=100);
+
+            opacity: 1;
+          }
+        }
+        @keyframes ipadShowP1 {
+          from {
+            filter: alpha(opacity=0);
+            opacity: 0;
+          }
+          to {
+            filter: alpha(opacity=100);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+.content_show{
+  .banner_bg{
+    .banner_content{
+      .title {
+        animation-play-state: running;
+      }
+      .register_btn{
+        animation-play-state: running;
+      }
+      .molecule{
+        animation-play-state: running;
+      }
+      .ipad_bg{
+        animation-play-state: running;
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 1374px ) {
+
+  .jf_page1_banner .banner_bg .banner_content {
+    margin: -220px 0 0 -575px;
+  }
+  .jf_page1_banner .banner_bg .banner_content .ipad_bg {
+    position: absolute;
+    bottom: -40%;
+    left: -6%;
+    background-image: url(../images/jf_page1_ipad.png);
+    width: 1548px;
+    height: 502px;
+    background-size:80%;
+    z-index: -1;
+  }
+  .jf_page1_banner .banner_bg .banner_content .molecule .leftfour_circle {
+    background-size:80%;
+    .advantage3 {
+      position: absolute;
+      top: 98px;
+      right: 215px;
+      font-size: 26px;
+    }
+  }
+  .jf_page1_banner .banner_bg .banner_content .molecule .leftthree_circle {
+    background-size: 80%;
+    .advantage2 {
+      position: absolute;
+      top: 45px;
+      right: 362px;
+      font-size: 28px;
+    }
+  }
+  .jf_page1_banner .banner_bg .banner_content .molecule .lefttwo_circle {
+    background-size: 80%;
+    .advantage4 {
+      position: absolute;
+      top: 168px;
+      left: 452px;
+      font-size: 26px;
+    }
+  }
+  .jf_page1_banner .banner_bg .banner_content .molecule .leftone_circle {
+    background-size: 80%;
+    .advantage1 {
+      position: absolute;
+      top: 140px;
+      left: 306px;
+      font-size: 28px;
+    }
+  }
+  .jf_page1_banner .banner_bg .banner_content .molecule .mid_circle {
+    background-size:80%;
+  }
+  .jf_page1_banner .banner_bg .banner_content .molecule .small_circle {
+    background-size: 80%;
+  }
+  .jf_page1_banner .banner_bg .banner_content .molecule .line_bg {
+    background-size: 80%;
+  }
+
+  .jf_page1_banner .banner_bg .banner_content .title p {
+    font-size: 40px;
+  }
+  .jf_page1_banner .banner_bg .banner_content .title p+p {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .jf_page1_banner .banner_bg .banner_content .register_btn {
+    margin: 0 auto 10px;
+  }
+}

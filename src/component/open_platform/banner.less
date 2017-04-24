@@ -1,0 +1,116 @@
+@colorDarkGray: #4a4a4a;
+@colorMiddleGray: #ababab;
+@colorLightGray: #dddddd;
+@colorBlue: #0392d4;
+@colorBlack: #000;
+@colorWhite: #fff;
+@clickEffect: hsla(0, 0%, 100%, 0.8);
+@clickColorBlue: #0994cc;
+
+.open_platform {
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  .banner_bg {
+    position: relative;
+    background: url("../images/pi_1_banner_bg.png") no-repeat top center;
+    width: 100%;
+    height: 700px;
+    .part1_content {
+      position: relative;
+      height: 100%;
+      max-width: 1200px;
+      width: 1073px;
+      margin: 0 auto;
+      padding-top: 50px;
+      .text{
+        background: url("../images/op_1_comma.png") no-repeat top center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 26px;
+        color: @colorDarkGray;
+      }
+      .computer{
+        position: absolute;
+        top: 20px;
+        left: 25%;
+        background: url("../images/op_1_computer.png") no-repeat;
+        width: 659px;
+        height: 369px;
+        background-size: 80%;
+      }
+      /*scene*/
+      .first{
+        font-size: 100px;
+        font-weight: 700;
+        color: #484848;
+        position: absolute;
+        left: -5%;
+        top: 40%;
+      }
+      .last{
+        font-size: 100px;
+        font-weight: 700;
+        color: #484848;
+        position: absolute;
+        right: -5%;
+        top: 80%;
+      }
+      .scene{
+        position: absolute;
+        top: 350px;
+        max-width: 1073px;
+        margin: 0 auto;
+        padding-top: 10px;
+        .box{
+          float: left;
+          width: 25%;
+          padding: 0 40px;
+          .title{
+            padding-left: 20px;
+            font-size: 24px;
+            color: @colorBlue;
+            span{
+              font-size: 120px;
+              color: #a5d5f1;
+              font-family: "Microsoft YaHei UI Light" !important;
+            }
+          }
+          .content{
+            top: -15px;
+            font-size: 16px;
+            line-height: 30px;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 1374px) {
+  .open_platform .banner_bg .part1_content .scene {
+    top: 250px;
+    padding-top: 0;
+  }
+  .open_platform .banner_bg .part1_content .first {
+    left: -2%;
+    top: 35%;
+  }
+  .open_platform .banner_bg .part1_content .last {
+    right: -2%;
+    top: 70%;
+  }
+  .open_platform .banner_bg .part1_content .computer {
+    left: 30%;
+    background-size: 60%;
+  }
+  .open_platform .banner_bg {
+    height: 600px;
+  }
+}
