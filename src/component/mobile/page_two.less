@@ -1,0 +1,203 @@
+/*嘉福官方网站第二页
+金俊菲*/
+
+.content_block.content_show .page_two {
+  .page_two_title {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  .page_two_benefit{
+    .page_two_background{
+      .page_two_benefit_background.left_top{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      .page_two_benefit_background.right_top{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      .page_two_benefit_background.left_bottom{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      .page_two_benefit_background.right_bottom{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+    }
+  }
+
+
+}
+.content_block .page_two{
+  height:100%;
+  width: 100%;
+  background: url("../../images/page_two/icon-background.png") no-repeat;
+  background-size: 100%;
+  position: relative;
+
+/*图标*/
+.page_two_icon{
+  padding: 10px 5px;
+}
+/*标题*/
+  .page_two_title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 40px;
+  color: #f1f5f9;
+    position: relative;
+    z-index: 50;
+
+    transform: translate3d(0,100%,0);
+    opacity: 0;
+    transition: transform .5s .5s,opacity .5s .5s;
+
+  .page_two_title_chinese{
+    font-weight: 500;
+    font-size: 30px;
+    color: #4a4a4a;
+  }
+  .page_two_title_icon{
+    img{
+      width:250px;
+      height: 25px;
+      margin-top:-15px;
+    }
+  }
+}
+/*利益点*/
+.page_two_benefit{
+  width: 100%;
+  height:350px;
+  margin-top:10%;
+
+  img{
+    width:calc(20vw) ;
+    height:calc(20vw);
+  }
+  @media screen and (max-width: 380px){
+    img{
+      width:calc(17vw) ;
+      height:calc(17vw);
+    }
+  }
+  .page_two_background{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+
+    .page_two_benefit_background {
+      width: calc(40vw);
+      height: calc(40vw);
+      background: white;
+      position: absolute;
+      text-align:center;
+      line-height:20px;
+      .page_two_text_one{
+        font-size: 14px;
+        font-weight: bold;
+        position: relative;
+        left:0%;
+        top:8px;
+      }
+      .page_two_text_two{
+        font-size: 12px;
+        color: #4a4a4a;
+        position: relative;
+        left:0%;
+        top:8px;
+      }
+
+    }
+    .page_two_benefit_background.left_top{
+      border-radius: 50% 50% 0;
+      left:8%;
+      top:0%;
+      transform: translate3d(0,100%,0);
+      opacity: 0;
+      transition: transform .5s .9s,opacity .5s .9s;
+      img{
+        position: relative;
+        left:0%;
+        top:10px;
+      }
+
+    }
+    .page_two_benefit_background.right_top{
+      border-radius: 50% 50% 50% 0;
+      left:51%;
+      top:0%;
+      transform: translate3d(0,100%,0);
+      opacity: 0;
+      transition: transform .5s .9s,opacity .5s .9s;
+      img{
+        position: relative;
+        left:0%;
+        top:10px;
+      }
+    }
+    .page_two_benefit_background.left_bottom{
+      border-radius: 50% 0 50% 50%;
+      left:8%;
+      top:calc(43vw);
+      transform: translate3d(0,100%,0);
+      opacity: 0;
+      transition: transform .5s 1.2s,opacity .5s 1.2s;
+      img{
+        position: relative;
+        left:0%;
+        top:10px;
+      }
+    }
+    .page_two_benefit_background.right_bottom{
+      border-radius: 0 50% 50%;
+      left:51%;
+      top:calc(43vw);
+      transform: translate3d(0,100%,0);
+      opacity: 0;
+      transition: transform .5s 1.2s,opacity .5s 1.2s;
+      img{
+        position: relative;
+        left:0%;
+        top:10px;
+      }
+    }
+  }
+
+}
+  /*月球*/
+  .page_two_moon{
+    position: absolute;
+    left:-20%;
+    top:-40%;
+    width: 100%;
+    img{
+      width:calc(100vw);
+      height:calc(90vw);
+    }
+    .moon_circle{
+      position: absolute;
+      left:20%;
+      top: 60%;
+      transform:rotate(0deg);
+      animation: MoonMove 65s infinite linear;
+      @keyframes MoonMove{
+        0%{
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .moon_shadow{
+      position: absolute;
+      left:20%;
+      top: 60%;
+    }
+  }
+
+}

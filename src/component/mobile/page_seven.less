@@ -1,0 +1,245 @@
+/*嘉福官方网站第七页
+金俊菲*/
+.content_block.content_show .page_seven{
+  .page_seven_title{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+
+  }
+  .page_seven_key{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  .page_seven_bottom{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.content_block .page_seven{
+  height: 100%;
+  width: 100%;
+  background: url("../../images/page_seven/icon-bg.png") no-repeat;
+  background-size: 100%;
+  position: relative;
+  /*图标*/
+  .page_seven_icon{
+    padding: 10px 5px;
+  }
+  /*标题*/
+  .page_seven_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #dbdbdb;
+    padding: 50px 0;
+    transform: translate3d(0,100%,0);
+    opacity: 0;
+    transition: transform .5s .5s,opacity .5s .5s;
+
+    .page_seven_title_chinese{
+      font-weight: lighter;
+      font-size:42px;
+      color: #4a4a4a;
+    }
+
+    @media screen and(max-width:380px){
+      .page_seven_title_chinese{
+        font-weight: lighter;
+        font-size:36px;
+        color: #4a4a4a;
+      }
+    }
+    .page_seven_title_icon{
+      img{
+        width: 60%;
+        margin-top: -18px;
+      }
+    }
+  }
+  /*注册*/
+  .page_seven_key{
+    width: 100%;
+    padding-top: 30px;
+    transform: translate3d(0,100%,0);
+    opacity: 0;
+    transition: transform .5s .9s,opacity .5s .9s;
+
+
+    .page_seven_key_between{
+      font-size: 20px;
+      color: white;
+      background: linear-gradient(left,rgb(41,177,227),rgb(2,118,199));
+      height: 42px;
+      width: 35%;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 42px;
+      margin: 0 auto;
+    }
+  }
+  .page_seven_bottom{
+    width:100%;
+    /*height:260px;*/
+    background:#202128;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate3d(0,100%,0);
+    opacity: 0;
+    transition: transform .5s 1.2s,opacity .5s 1.2s;
+    .page_seven_line{
+      width:100%;
+      height:1px;
+      background:#dbdbdb;
+      margin: 0 auto;
+    }
+    .page_seven_icon{
+      display: flex;
+      justify-content: space-around;
+      padding: 4px 10px 4px;
+      background:white;
+      img{
+        width:100%;
+      }
+      .icon{
+        display: flex;
+        align-items: center;
+        img{
+          width: calc(8vw);
+          height: calc(8vw);
+        }
+
+        .text_one{
+          font-size: 14px;
+          font-weight: bold;
+          color: #4a4a4a;
+        }
+        .text_one_text{
+          font-size: 10px;
+          color: #4a4a4a;
+        }
+      }
+
+
+    }
+    .bottom_text{
+      position: relative;
+      height: 175px;
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+      width: 100%;
+
+      &>div{
+
+        width: 50%;
+
+        &>div>div{
+
+          margin: 0 auto;
+          text-align: center;
+        }
+
+      }
+
+      .bottom_text_one{
+        .bottom_one{
+          color: white;
+
+          .title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            text-align: left;
+            img{
+              width:calc(6vw);
+              height:calc(6vw);
+            }
+          }
+          .title_text{
+            width:60%;
+            font-size: 12px;
+            color: #c3c4c7;
+            position: relative;
+            line-height: 18px;
+            text-align: left;
+            >p{
+              margin: 0;
+            }
+            img{
+              &:first-child{
+                width:calc(12vw);
+                height:calc(6vw);
+                position: absolute;
+                left: 44%;
+                top: 60%;
+
+              }
+
+              &:last-child{
+                dth:calc(12vw);
+                height:calc(6vw);
+                position: absolute;
+                left: 44%;
+                top: 90%;
+
+              }
+
+
+
+            }
+          }
+        }
+      }
+      .bottom_line_one{
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width:0;
+        height:100%;
+        border-right:1px solid white;
+
+      }
+      .bottom_text_two{
+        .title_one{
+          font-size: 14px;
+          color: white;
+          padding-bottom: 8px;
+        }
+        .title_text_one{
+          font-size: 12px;
+          color: #c3c4c7;
+          width: 60%;
+          line-height: 18px;
+          text-align: left;
+        }
+      }
+
+    }
+    .bottom_line{
+      width:100%;
+      height:1px;
+      background:white;
+    }
+
+
+    .bottom_vallue{
+     text-align: center;
+      font-size: 12px;
+      color: #bbbbbb;
+      padding-top: 5px;
+
+
+
+
+
+
+  }
+
+  }
+
+}

@@ -1,0 +1,229 @@
+
+/*嘉福官方网站第四页
+金俊菲*/
+.content_block.content_show .page_four{
+  .page_four_title{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+
+  }
+  .page_four_benefit{
+    .page_four_rocket{
+      img{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      .page_four_icon{
+        /*transform: translate3d(0, 0, 0);*/
+        transform: scale3d(1,1,1) rotate(0);
+        opacity: 1;
+      }
+      .page_four_text{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+      .page_four_sub_text{
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+
+      }
+
+    }
+
+  }
+}
+
+.content_block .page_four{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url("../../images/page_four/icon-background.png") no-repeat;
+  background-size: 100% 100%;
+
+
+
+  /*图标*/
+  .page_four_icon{
+    padding: 10px 5px;
+  }
+  /*标题*/
+  .page_four_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #dbdbdb;
+    padding-top: 30px;
+    position: relative;
+    z-index: 10;
+    transform: translate3d(0,100%,0);
+    opacity: 0;
+    transition: transform .5s .5s,opacity .5s .5s;
+    .page_four_title_chinese{
+      font-weight: 500;
+      font-size: 30px;
+      color: #4a4a4a;
+    }
+    .page_four_title_icon{
+      img{
+        width: 60%;
+        margin-top: -18px;
+      }
+    }
+  }
+  /*利益点*/
+  .page_four_benefit{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 60px;
+    z-index: 1;
+    /*transform: translate3d(0,100%,0);
+    opacity: 0;
+    transition: transform .5s .8s,opacity .5s .8s;*/
+
+    .page_four_rocket{
+      width: 100%;
+      position: relative;
+
+
+      &>img{
+        width:calc(75vw);
+        height:calc(138.5vw);
+        transform: translate3d(0,100%,0);
+        opacity: 0;
+        transition: transform .5s .8s,opacity .5s .8s;
+      }
+      .page_four_text{
+        position: absolute;
+        left:0%;
+        top:44%;
+        font-size:16px;
+        line-height: 32px;
+        color: #4a4a4a;
+        width: 100%;
+        transform: translate3d(0,100%,0);
+        opacity: 0;
+        transition: transform .5s 1.6s,opacity .5s 1.6s;
+        .page_four_text_one{
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+      }
+      @media screen and (max-width: 380px){
+        .page_four_text{
+          position: absolute;
+          left:0%;
+          top:44%;
+          font-size:14px;
+          line-height: 30px;
+          color: #4a4a4a;
+          width: 100%;
+          transform: translate3d(0,100%,0);
+          opacity: 0;
+          transition: transform .5s 1.6s,opacity .5s 1.6s;
+          .page_four_text_one{
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+        }
+      }
+      @media screen and (max-width: 330px){
+        .page_four_text{
+          position: absolute;
+          left:0%;
+          top:44%;
+          font-size:14px;
+          line-height: 25px;
+          color: #4a4a4a;
+          width: 100%;
+          transform: translate3d(0,100%,0);
+          opacity: 0;
+          transition: transform .5s 1.6s,opacity .5s 1.6s;
+          .page_four_text_one{
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+        }
+      }
+      .page_four_icon{
+        position: absolute;
+        left:-0.5%;
+        top:25.8%;
+        padding: 0 0;
+        width:100%;
+        transform: scale3d(1.5,1.5,1) rotate(180deg);
+        opacity: 0;
+        transition: transform .5s 1.2s,opacity .5s 1.2s;
+
+        img{
+          width:calc(20vw);
+          height:calc(20vw);
+        }
+      }
+      .page_four_sub_text{
+        color: #4a4a4a;
+        position: absolute;
+        display: flex;
+        justify-content:space-between;
+        top:66%;
+        width:75%;
+        left:48px;
+        transform: translate3d(0,100%,0);
+        opacity: 0;
+        transition: transform .5s 2s,opacity .5s 2s;
+
+        img{
+          width:calc(12vw);
+          height:calc(12vw);
+          margin-bottom: 5px;
+        }
+
+        .sub_text_one{
+          margin-top: -10px;
+          font-size:14px;
+          font-weight: bold;
+        }
+        .sub_text_two{
+          width:76px;
+          font-size:12px;
+          margin-top: 3px;
+          line-height: 14px;
+
+        }
+      }
+    }
+
+
+  }
+  /*月球*/
+  .page_four_moon{
+    position:absolute;
+    left:-20%;
+    top:85%;
+    width: 100%;
+    img{
+      width:calc(100vw);
+      height:calc(90vw);
+    }
+    .moon_circle{
+      position: absolute;
+      left:20%;
+      top: 60%;
+      transform:rotate(0deg);
+      animation: MoonMove 65s infinite linear;
+
+    }
+    .moon_shadow{
+      position: absolute;
+      left:20%;
+      top: 60%;
+    }
+
+  }
+}
