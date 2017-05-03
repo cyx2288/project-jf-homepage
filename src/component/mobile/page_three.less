@@ -1,0 +1,122 @@
+/*嘉福官方网站第三页
+金俊菲*/
+.content_block.content_show .page_three{
+  .page_three_title{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  .page_three_picture{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  .test_one{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  .test_two{
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+
+}
+.content_block .page_three{
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url("../../images/page_three/icon-bg.png") no-repeat;
+  background-size: 100%;
+
+
+  /*图标*/
+  .page_three_icon{
+    padding: 10px 5px;
+  }
+  /*标题*/
+  .page_three_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #dbdbdb;
+    padding-top: 30px;
+    transform: translate3d(0,100%, 0);
+    opacity: 0;
+    transition: transform .5s .5s,opacity .5s .5s;
+
+
+    .page_three_title_chinese{
+      font-weight: 500;
+      font-size: 30px;
+      color: #4a4a4a;
+    }
+    .page_three_title_icon{
+      img{
+        width: 60%;
+        margin-top: -18px;
+      }
+    }
+  }
+  /*箭头图形*/
+  .page_three_picture{
+    transform: translate3d(0,100%,0);
+    opacity: 0;
+    transition: transform .5s .9s,opacity .5s .9s;
+    .page_three_arrow{
+      text-align: center;
+      margin-top: -45px;
+      padding-right: 2px;
+      img{
+        width:calc(87.5vw);
+        height:calc(65vw);
+      }
+    }
+  }
+  /*利益点*/
+  .page_three_benefit{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -20px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #4a4a4a;
+    img{
+      width:calc(12.5vw);
+      height:calc(12.5vw);
+    }
+    .benefit_one{
+      text-align: center;
+      width: 33.3%;
+
+      .text_sub_one{
+        font-size: 14px;
+        color: #4a4a4a;
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      .text_sub_text{
+        font-size: 12px;
+        color: #ababab;
+        width: 70%;
+        margin: 0 auto;
+      }
+
+    }
+  }
+
+}
+
+.content_block .page_three .test_one{
+  transform: translate3d(0,100%, 0);
+  opacity: 0;
+  transition: transform .5s 1.2s,opacity .5s 1.2s;
+}
+.content_block .page_three .test_two{
+  transform: translate3d(0,100%, 0);
+  opacity: 0;
+  transition: transform .5s 1.6s,opacity .5s 1.6s;
+}
