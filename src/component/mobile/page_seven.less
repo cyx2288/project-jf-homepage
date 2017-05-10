@@ -19,7 +19,7 @@
 .content_block .page_seven{
   height: 100%;
   width: 100%;
-  background: url("../../images/page_seven/icon-bg.png") no-repeat;
+  background: url("../images/page_seven/icon-bg.png") no-repeat;
   background-size: 100%;
   position: relative;
   /*图标*/
@@ -170,27 +170,30 @@
             >p{
               margin: 0;
             }
-            img{
-              &:first-child{
-                width:calc(12vw);
-                height:calc(6vw);
-                position: absolute;
-                left: 44%;
-                top: 60%;
+            .dp{
+              position: absolute;
+              top: 32px;
+              left: 50px;
+            }
+            a {
+              display: block;
+              img {
+                &:first-child {
+                  width: calc(12vw);
+                  height: calc(6vw);
+                  position: absolute;
+                  left: 44%;
+                  top: 60%;
+                }
+                &:last-child {
+                  width: calc(12vw);
+                  height: calc(6vw);
+                  position: absolute;
+                  left: 44%;
+                  top: 90%;
 
+                }
               }
-
-              &:last-child{
-                dth:calc(12vw);
-                height:calc(6vw);
-                position: absolute;
-                left: 44%;
-                top: 90%;
-
-              }
-
-
-
             }
           }
         }

@@ -56,7 +56,7 @@ gulp.task('fileIncludeDev', function () {
 
                     var addJs = "<script src='js/jquery-3.0.0.min.js'></script>\n";
 
-                    addJs += "<script src='js/homepage_new2017.min.js'></script>\n";
+                    addJs += "<script src='js/homepage_new2017.js'></script>\n";
 
                     addJs += "<script src='js/swiper.min.js'></script>\n";
 
@@ -156,9 +156,9 @@ gulp.task('js',function () {
 
         gulp.src(['src/js/homepage_new2017.js'])
 
-            .pipe(uglify())
+            //.pipe(uglify())
 
-            .pipe(rename({suffix: '.min'}))
+            //.pipe(rename({suffix: '.min'}))
 
             .pipe(gulp.dest('build/js'))
 

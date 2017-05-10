@@ -615,6 +615,29 @@
         "hideButton":"drop_down_delete"//关闭按钮，class选择器
 
     });
+    function judgeBrowserJump() {
+
+        if (browser.supplier.wechat) {  //判断是否微信内置浏览器
+
+            window.location.href = "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5Nzk2OTQ1MA==#wechat_redirect";
+
+        }
+        else {
+            window.location.href = "http://www.jia-fu.cn/download/app";
+        }
+
+    }
+
+    //判断是否为安卓 过渡平滑
+    addEventListener('load', function () {
+
+        if (browser.os.android) {
+
+            $('.moveEle').css("transition", "transform 0.3s linear")
+        }
+
+
+    }, false);
 
 
 </script>
