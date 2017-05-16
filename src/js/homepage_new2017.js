@@ -101,7 +101,7 @@ jfCustomerService.init(
         tel: '1',// 电话
         '公司名称': '',
         '员工编号': '',
-    },'b040d96757bf55ea302f9fbfb0ecd062'//客服组1
+    },'9534880d7044dfd02e5dc2c0edaa1ca8'//客服组2
 );
 
 
@@ -138,7 +138,7 @@ var browser = {
         };
 
     }(),
-    
+
     //browser.supplier.wechat
 };
 
