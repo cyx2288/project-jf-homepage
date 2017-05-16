@@ -112,6 +112,8 @@ gulp.task('fileIncludeDev', function () {
                 run: function ($) {
 
                     var addJs = "<script src='js/jquery-3.0.0.min.js'></script>\n";
+                    
+                    addJs += "<script src='js/homepage_new2017.js'></script>\n";
 
                     addJs += "<script src='js/homepage_dev.js'></script>\n";
 

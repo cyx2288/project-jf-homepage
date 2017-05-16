@@ -579,7 +579,7 @@
               content: "";
               display: block;
               border-bottom: solid 1px #e6e9ec;
-              top: 25%;
+              top: 20%;
               left: 0%;
               height: 1px;
               position: absolute;
@@ -602,7 +602,7 @@
                 content: "";
                 display: block;
                 border-bottom: solid 1px #e6e9ec;
-                top: 50%;
+                top: 35%;
                 height: 1px;
                 position: absolute;
                 width: 100%;
@@ -619,7 +619,26 @@
                 color: #4a4a4a;
                 padding: 20px 0;
                 font-size: 18px;
+                &:last-child{
+                  position: relative;
+                  &:last-child:after{
+                    content: "";
+                    display: block;
+                    border-bottom: solid 1px #e6e9ec;
+                    top: 0;
+                    height: 1px;
+                    position: absolute;
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                    -webkit-transform: scaleX(.95);
+                    transform: scaleX(.95);
+
+                  }
+                }
+
               }
+
 
             }
 
