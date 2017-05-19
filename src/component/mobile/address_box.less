@@ -1,0 +1,96 @@
+/*地址选择弹出框*/
+#area_block_show{
+
+  width:80%;
+  box-shadow:2px 0 4px rgba(149,151,153, .24);
+  border-radius: 10px;
+  background: #ffffff;
+  position: fixed;
+  left:10%;
+  z-index:2000;
+  top:37%;
+  display: none;
+  .area_message{
+    z-index: 5000;
+    background: white;
+    border-radius: 10px;
+
+    .area_block_show_title{
+      font-size: 20px;
+      color: #4a4a4a;
+      font-weight: bold;
+      padding:15px 0 12px 0;
+      /*vertical-align: middle;*/
+      text-align: center;
+
+
+      &:after{
+        content: " ";
+        display: block;
+        width: 100%;
+
+        margin: 0 auto;
+        height: 1px;
+        border-bottom: 1px solid #dddddd;
+        top: 52px;
+        left:0;
+        position: absolute;
+      }
+    }
+    .show_delete{
+      position: absolute;
+      top:10%;
+      left:88%;
+      img{
+        width: 25px;
+        height: 25px;
+      }
+    }
+    .area_block_show_address{
+      font-size: 16px;
+      padding: 10px 16px 15px 16px;
+      color: #4a4a4a;
+    }
+    .area_block_show_telphone{
+      font-size: 16px;
+      padding: 0 0 20px 16px;
+      color: #4a4a4a;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      a{
+        color: #4a4a4a;
+        font-size: 16px;
+        margin-top: 3px;
+        width: 70%;
+        padding: 5px 0;
+      }
+    }
+
+  }
+
+  .area_black_box{
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    position: fixed;
+    z-index:-1;
+    left:0;
+    top:0;
+    opacity: .4;
+    /*display: none;*/
+
+
+    &.show{
+      display: block;
+    }
+  }
+  &.show{
+    display: block;
+  }
+
+}
+
+
+
+

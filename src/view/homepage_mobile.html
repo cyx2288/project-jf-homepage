@@ -42,12 +42,23 @@
                 <%-include("../component/mobile/page_six.html")%>
             </div>
 
+            <!--第八页-->
+            <div class="content_block">
+                <%-include("../component/mobile/page_eight.html")%>
+            </div>
+
             <!--第七页-->
             <div class="content_block">
                 <%-include("../component/mobile/page_seven.html")%>
             </div>
+
         </div>
+
+
     </div>
+
+    <!--地址选择弹出框-->
+    <%-include("../component/mobile/address_box.html")%>
 </body>
 <script>
     /*鼠标滚动事件*/
@@ -75,9 +86,9 @@
             _this.initPoint();//增加右侧导航
 
 
-            addEventListener("touchstart", getFirstPosition, false);
+            document.getElementById('homepage_scroll_move').addEventListener("touchstart", getFirstPosition, false);
 
-            addEventListener('touchend', function () {
+            document.getElementById('homepage_scroll_move').addEventListener('touchend', function () {
                 getLastPosition();
 
                 if (_this.isXMove && Math.abs(_this.moveDistance) > _this.showheight) {
@@ -90,7 +101,7 @@
 
             }, false);
 
-            addEventListener("touchmove", function (event) {
+            document.getElementById('homepage_scroll_move').addEventListener("touchmove", function (event) {
 
                 var evt = event ? event : window.event;
                 evt.preventDefault()
@@ -383,5 +394,39 @@
 
     });
 
+    /*地址选择弹出框*/
+    $('.frame').on('click',function () {
+
+
+        $('#area_block_show').addClass('show');
+
+
+        $('#area_block_show').find('.area_block_show_title').html(
+            $(this).find('.area_title').html()
+        );
+
+        $('#area_block_show').find('.area_block_show_address').html(
+            $(this).find('.area_address').html()
+        );
+
+        $('#area_block_show').find('.area_block_show_telphone').html(
+            $(this).find('.area_telphone').html()
+        );
+
+    })
+
+    $('.show_delete').on('click',function () {
+
+        $('#area_block_show').removeClass('show');
+
+    })
+
+
+
+
+
 </script>
+
+
+
 </html>
