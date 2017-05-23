@@ -438,11 +438,23 @@
 
     });
 
+
+
     /*地址选择弹出框*/
     $('.frame').on('click',function () {
 
+        $('#area_block_show').css('display','block')
 
-        $('#area_block_show').addClass('show');
+        setTimeout(function () {
+            $('#area_block_show').addClass('show');
+
+            $('.area_black_box').addClass('show');
+        },10);
+
+
+        $('.area_black_box').css('display','block')
+
+
 
 
         $('#area_block_show').find('.area_block_show_title').html(
@@ -461,7 +473,21 @@
 
     $('.show_delete').on('click',function () {
 
-        $('#area_block_show').removeClass('show');
+
+
+            $('.area_black_box').css('display','none').removeClass('show');
+
+            $('#area_block_show').css('display','none').removeClass('show');
+    })
+
+    $('.area_black_box').on('click',function () {
+
+
+
+
+        $('.area_black_box').css('display','none').removeClass('show');
+
+        $('#area_block_show').css('display','none').removeClass('show');
 
     })
 
@@ -469,8 +495,9 @@
 
 
 
+
+
+
 </script>
-
-
 
 </html>

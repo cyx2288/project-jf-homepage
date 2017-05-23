@@ -10,17 +10,22 @@
   z-index:2000;
   top:37%;
   display: none;
+  transform: scale(0.8);
+  transition: all 0.2s linear;
+
   .area_message{
     z-index: 5000;
     background: white;
     border-radius: 10px;
+   /* transform: scale(0.8);
+    transition: all 0.2s linear;*/
 
     .area_block_show_title{
       font-size: 20px;
       color: #4a4a4a;
       font-weight: bold;
       padding:15px 0 12px 0;
-      /*vertical-align: middle;*/
+
       text-align: center;
 
 
@@ -69,28 +74,36 @@
 
   }
 
-  .area_black_box{
-    width: 100%;
-    height: 100%;
-    background: #000000;
-    position: fixed;
-    z-index:-1;
-    left:0;
-    top:0;
-    opacity: .4;
-    /*display: none;*/
 
-
-    &.show{
-      display: block;
-    }
-  }
   &.show{
-    display: block;
+
+    transform: scale(1);
+
+    .area_message{
+
+    /*transform: scale(1);*/
+    }
+
+
+
   }
-
 }
+.area_black_box{
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: fixed;
+  z-index:10;
+  left:0;
+  top:0;
+  opacity: .2;
+  display: none;
+  transition:  all 0.2s linear;
 
 
+  &.show{
+    opacity: 0.5;
+  }
+}
 
 
