@@ -17,15 +17,17 @@
   overflow: hidden;
   background-color: @colorWhite;
   .why_bg {
+    position: relative;
     height: 100%;
     max-width: 1200px;
     margin: 0 auto;
     .page5_content {
       position: absolute;
       width: 1073px;
+      height: 800px;
       top: 50%;
       left: 50%;
-      margin: -400px 0 0 -535px;
+      margin: -400px 0 0 -537px;
       /*标题*/
       .page5_title {
         position: relative;
@@ -63,7 +65,8 @@
         .title_text {
           position: absolute;
           top: 38%;
-          left: 42%;
+          left: 40%;
+          left: calc((1073px - 168px)/2);
           font-size: 24px;
           color: @colorDarkGray;
         }
@@ -268,11 +271,15 @@
     }
     @media screen and (max-width: 1690px) {
       .page5_content {
+        top:50%;
+        left: 50%;
         margin: -300px 0 0 -535px;
       }
     }
     @media screen and (max-width: 1374px) {
       .page5_content {
+        top:50%;
+        left: 50%;
         //margin: -300px 0 0 -535px;
         margin: -260px 0 0 -535px;
       }

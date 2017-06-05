@@ -18,15 +18,17 @@
   overflow: hidden;
   background-color: #f5fbff;
   .what_bg {
+    position: relative;
     height: 100%;
     max-width: 1200px;
     margin: 0 auto;
     .page4_content {
       position: absolute;
       width: 1073px;
+      height: 800px;
       top: 50%;
       left: 50%;
-      margin: -400px 0 0 -535px;
+      margin: -400px 0 0 -537px;
       /*标题*/
       .page4_title {
         position: relative;
@@ -64,7 +66,8 @@
         .title_text {
           position: absolute;
           top: 40%;
-          left: 44%;
+          left: 40%;
+          left: calc((1073px - 130px)/2);
           font-size: 24px;
           color: @colorDarkGray;
         }
@@ -399,13 +402,17 @@
 
     @media screen and (max-width: 1690px){
       .page4_content {
-        margin: -300px 0 0 -535px;
+        top: 50%;
+        left: 50%;
+        margin: -300px 0 0 -537px;
       }
     }
 
     @media screen and (max-width: 1374px) {
       .page4_content {
-        margin: -260px 0 0 -535px;
+        top: 50%;
+        left: 50%;
+        margin: -260px 0 0 -537px;
       }
     }
   }
