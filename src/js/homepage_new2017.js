@@ -161,20 +161,21 @@ var scrollBlockMove = {
 
             _this.initPoint();//增加右侧导航
 
+
             //绑定鼠标滚动事件
             addEventListener('mousewheel', function (e) {//ie,chrome,
 
-                if (_this.isXMove) {
+                 if (_this.isXMove) {
 
-                    norXMove();
+                     norXMove();
 
                     _this.changeScroll(e.wheelDelta)
 
-                }
+                 }
 
             }, false);
 
-            addEventListener('DOMMouseScroll', function (e) {//ff
+           addEventListener('DOMMouseScroll', function (e) {//ff
 
                 if (_this.isXMove) {
 
@@ -187,6 +188,15 @@ var scrollBlockMove = {
             }, false);
 
         }
+        //safari 1025添加
+
+        // else if(navigator.userAgent.indexOf("Safari") > -1){
+        //
+        //     console.log('safari');
+        //
+        //     document.getElementById('homepage_scroll_move').style.overflow='auto'//safari 版本下做到可拖动
+        //
+        // }
 
         else{
 

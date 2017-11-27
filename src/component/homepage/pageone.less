@@ -35,6 +35,7 @@
     width: 20px;
     left: 15px;
     top: 45%;
+    z-index: 1000;
 
     div {
 
@@ -90,8 +91,8 @@
       .title {
         text-align: center;
         font-weight: lighter;
-        animation: titleShowP1 2s ease-in-out ;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         @-webkit-keyframes titleShowP1 {
           from {
             filter: alpha(opacity=0);
@@ -141,8 +142,8 @@
         margin: 0 auto 20px;
         cursor: pointer;
         user-select: none;
-        animation: titleShowBtn 2s ease-in-out ;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         &:hover {
           color: hsla(0, 0, 100%, .8);
         }
@@ -175,9 +176,9 @@
         position: relative;
         width: 1058px;
         height: 339px;
-        animation: moleculeShowP1 2.5s ease-in-out ;
+
         transform-origin: 50% 100%;
-        animation-play-state: paused;
+        //animation-play-state: paused;
         @-webkit-keyframes  moleculeShowP1 {
           from {
             filter: alpha(opacity=0);
@@ -342,8 +343,8 @@
         height: 502px;
         background-size: 100%;
         z-index: -1;
-        animation: ipadShowP1 2s ease-in-out;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         @-webkit-keyframes ipadShowP1 {
           from {
             filter: alpha(opacity=0);
@@ -373,16 +374,16 @@
   .banner_bg{
     .banner_content{
       .title {
-        animation-play-state: running;
+        animation: titleShowP1 2s ease-in-out ;
       }
       .register_btn{
-        animation-play-state: running;
+        animation: titleShowBtn 2s ease-in-out ;
       }
       .molecule{
-        animation-play-state: running;
+        animation: moleculeShowP1 2.5s ease-in-out ;
       }
       .ipad_bg{
-        animation-play-state: running;
+        animation: ipadShowP1 2s ease-in-out;
       }
     }
   }

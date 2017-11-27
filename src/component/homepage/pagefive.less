@@ -33,8 +33,8 @@
         position: relative;
         text-align: center;
         font-weight: bold;
-        animation: titleShowP5 2s ease-in-out;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         @-webkit-keyframes titleShowP5 {
           from {
             filter: alpha(opacity=0);
@@ -77,8 +77,8 @@
         font-size: 16px;
         line-height: 30px;
         margin: 100px 0;
-        animation: explainShow 2s ease-in-out;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         @-webkit-keyframes explainShow {
           from {
             filter: alpha(opacity=0);
@@ -128,8 +128,8 @@
         margin: 10px 15px;
         transform: translateZ(0);
         backface-visibility: hidden;
-        animation: boxShow 2s ease-in-out;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         @-webkit-keyframes boxShow {
           from {
             filter: alpha(opacity=0);
@@ -286,17 +286,18 @@
     }
   }
 }
+
 .content_show{
   .why_bg{
     .page5_content{
       .page5_title {
-        animation-play-state: running;
+        animation: titleShowP5 2s ease-in-out;
       }
       .explain{
-        animation-play-state: running;
+        animation: explainShow 2s ease-in-out;
       }
       .box{
-        animation-play-state: running;
+        animation: boxShow 2s ease-in-out;
       }
     }
   }
