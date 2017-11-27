@@ -34,8 +34,8 @@
         position: relative;
         text-align: center;
         font-weight: bold;
-        animation: titleShowP5 2s ease-in-out;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         @-webkit-keyframes titleShowP5 {
           from {
             filter: alpha(opacity=0);
@@ -79,8 +79,8 @@
         font-size: 16px;
         line-height: 30px;
         margin: 100px 0 50px 0;
-        animation: explainShow 2s ease-in-out;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         @-webkit-keyframes explainShow {
           from {
             filter: alpha(opacity=0);
@@ -120,8 +120,8 @@
       }
       .round {
         position: relative;
-        animation: roundShow 2s ease-in-out;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         @-webkit-keyframes roundShow {
           from {
             filter: alpha(opacity=0);
@@ -334,7 +334,7 @@
             font-weight: bold;
             color: @colorWhite;
             animation: floating 9s infinite linear alternate;
-            animation-play-state: paused;
+            //animation-play-state: paused;
             img {
               width: 50px;
               height: 50px;
@@ -421,14 +421,14 @@
   .what_bg {
     .page4_content {
       .page4_title {
-        animation-play-state: running;
+        animation: titleShowP5 2s ease-in-out;
       }
       .explain {
-        animation-play-state: running;
+        animation: explainShow 2s ease-in-out;
       }
       .round{
-        animation-play-state: running;
-        .company{
+        animation: roundShow 2s ease-in-out;
+/*        .company{
           .icon{
             animation-play-state: running;
           }
@@ -442,7 +442,7 @@
           .icon{
             animation-play-state: running;
           }
-        }
+        }*/
       }
     }
   }

@@ -1,0 +1,93 @@
+<!--通用头部导航-->
+<div class="nav">
+    <div class="jf_nav">
+
+        <div>
+            <!-- jf logo -->
+            <a class="jf_nav_logo" href=""></a>
+            <!--jf 分类-->
+            <div class="jf_nav_content">
+                <ul>
+                    <li
+                            <% if (tabone) { %>
+                            class="show"
+                            <% } %>
+                    >
+                        <a href="main.html">首页</a>
+                    </li>
+                    <li
+                            <% if (tabtwo) { %>
+                            class="show"
+                            <% } %>
+                    >
+                        <a href="platform.html">平台介绍</a>
+                    </li>
+                    <li
+                            <% if (tabthree) { %>
+                            class="show"
+                            <% } %>
+                    >
+                        <a href="open_platform.html">开放平台
+                        </a>
+                    </li>
+                    <li
+                            <% if (tabfour) { %>
+                            class="show"
+                            <% } %>
+                    >
+                        <a href="about_jf.html">关于嘉福
+                        </a>
+                    </li>
+                    <li
+                            <% if (tabfive) { %>
+                            class="show"
+                            <% } %>
+                    >
+                        <a href="contact_us.html">
+                            联系我们
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--jf 登录-->
+            <div class="jf_nav_login">
+                <a class="login_btn company_login" href="http://e.jia-fu.cn" target="_blank">企业登录</a>
+                <a class="login_btn employee_login" href="https://e.jia-fu.cn/register/index" target="_blank">企业注册</a>
+
+                <div class="nav_contact">
+                    <!-- 邮件-->
+                    <a class="mail" onclick="jfCustomerService.click();"></a>
+                    <!-- 电话-->
+                    <a class="phone"></a>
+                    <div class="phone_box">
+                        <div class="triangle"></div>
+                        <div class="num">企业咨询：</div>
+                        <div class="num">
+                            <span>010-56280622<span class="special">（上海）</span></span>
+                            <span>021-64280689</span>
+                            <span class="special">（北京）</span>
+                        </div>
+                        <div class="num">员工客服：</div>
+                        <div class="num"><span>400-821-6990</span><span class="special">（在线时间：工作日9:00-17:30）</span>
+                        </div>
+                    </div>
+                    <!-- 二维码-->
+                    <a class="QR_icon"></a>
+                    <div class="QR_code">
+                        <div class="triangle"></div>
+                        <div class="weixin">
+                            <img src="images/QR_code_wx.png">
+                        </div>
+                        <div class="app">
+                            <img src="images/QR_code_app.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% if(homepage){ %>
+    <div class="jf_nav_tab"></div>
+    <% } %>
+</div>

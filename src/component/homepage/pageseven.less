@@ -23,8 +23,8 @@
    /*  height: 100%;*/
     max-width: 1200px;
     margin: 0 auto;
-    animation: consultShow 2s ease-in-out;
-    animation-play-state: paused;
+
+    //animation-play-state: paused;
     @-webkit-keyframes consultShow {
       from {
         filter: alpha(opacity=0);
@@ -172,8 +172,8 @@
     width: 239px;
     height: 239px;
     z-index: -1;
-    animation: ball1Play 20s ease-in-out alternate infinite;
-    animation-play-state: paused;
+
+    //animation-play-state: paused;
     @-webkit-keyframes ball1Play {
       from {
         transform: rotate(0deg) translateY(0);
@@ -202,8 +202,8 @@
     height: 239px;
     opacity: .5;
     z-index: -1;
-    animation: ball1Play 20s ease-in-out alternate infinite;
-    animation-play-state: paused;
+
+    //animation-play-state: paused;
   }
   .ball3{
     position: absolute;
@@ -215,8 +215,8 @@
     height: 402px;
     opacity: .5;
     z-index: -1;
-    animation: ball1Play3 10s ease-in-out alternate infinite;
-    animation-play-state: paused;
+
+    //animation-play-state: paused;
     @-webkit-keyframes ball1Play3 {
       from {
         transform: rotate(0deg) translateX(0);
@@ -245,8 +245,8 @@
     opacity: .4;
     z-index: -1;
     transform-origin: 50% 50%;
-    animation: ball1Play4 10s ease-in-out alternate infinite;
-    animation-play-state: paused;
+
+    //animation-play-state: paused;
     @-webkit-keyframes ball1Play4 {
       from {
         transform: rotate(360deg) ;
@@ -525,18 +525,18 @@
 }
 .content_show{
   .consult_bg {
-    animation-play-state: running;
+    animation: consultShow 2s ease-in-out;
   }
   .ball1{
-    animation-play-state: running;
+    animation: ball1Play 20s ease-in-out alternate infinite;
   }
   .ball2{
-    animation-play-state: running;
+    animation: ball1Play 20s ease-in-out alternate infinite;
   }
   .ball3{
-    animation-play-state: running;
+    animation: ball1Play3 10s ease-in-out alternate infinite;
   }
   .ball4{
-    animation-play-state: running;
+    animation: ball1Play4 10s ease-in-out alternate infinite;
   }
 }

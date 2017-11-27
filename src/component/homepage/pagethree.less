@@ -35,8 +35,8 @@
         margin-bottom: 145px;
         margin-top: 50px;
         font-weight: bold;
-        animation: titleShowP3 2s ease-in-out ;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         @-webkit-keyframes titleShowP3 {
           from {
             filter: alpha(opacity=0);
@@ -94,8 +94,8 @@
         background-repeat: no-repeat;
         background-position: center center;
         margin: 0 auto;
-        animation: textMainShow 2s ease-in-out;
-        animation-play-state: paused;
+
+        //animation-play-state: paused;
         @-webkit-keyframes textMainShow {
           from {
             filter: alpha(opacity=0);
@@ -433,7 +433,7 @@
             to {
               filter: alpha(opacity=100);
               opacity: 1;
-              transform: scale(0.72,0.72)translate3d(0, 0, 0);
+             transform: scale(0.72,0.72)translate3d(0, 0, 0);
             }
           }
           @keyframes textMainShow {
@@ -455,7 +455,7 @@
       .page3_content {
         top: 50%;
         left: 50%;
-        margin: -220px 0 0 -537px;
+        margin: -400px 0 0 -537px;
       }
     }
     @media screen and (max-width: 1374px) {
@@ -471,10 +471,10 @@
   .service_bg{
     .page3_content{
       .page3_title {
-        animation-play-state: running;
+        animation: titleShowP3 2s ease-in-out ;
       }
       .text_main{
-        animation-play-state: running;
+        animation: textMainShow 2s ease-in-out;
       }
     }
   }
