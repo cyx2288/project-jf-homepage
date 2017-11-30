@@ -8,7 +8,7 @@
   .contact_us{
     .frame{
       &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7),
-      &:nth-child(8),&:nth-child(9),&:nth-child(10),&:nth-child(11),&:nth-child(12),&:nth-child(13),&:nth-child(14){
+      &:nth-child(8),&:nth-child(9),&:nth-child(10),&:nth-child(11),&:nth-child(12),&:nth-child(13),&:nth-child(14),&:nth-child(15){
         transform: translate3d(0, 0, 0);
         opacity: 1;
       }
@@ -141,6 +141,13 @@
         transition: transform .5s 1.5s,opacity .5s 1.5s;
       }
 
+      &:nth-child(15){
+        transform: translate3d(0,100%,0);
+        opacity: 0;
+        transition: transform .5s 1.5s,opacity .5s 1.5s;
+        font-size: 18px;
+       height: 74px;
+      }
       .area_title,.area_address,.area_telphone{
         display: none;
       }
