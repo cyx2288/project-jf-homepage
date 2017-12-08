@@ -146,7 +146,25 @@
         opacity: 0;
         transition: transform .5s 1.5s,opacity .5s 1.5s;
         font-size: 18px;
-       height: 74px;
+        height: 78px;
+        @media screen and (max-width:320px) {
+          height: 74px;
+        }
+        }
+        .area{
+          @media screen and (max-width:320px){
+            font-size: 16px;
+            height: 30px;
+            line-height: 30px;
+          }
+        }
+        .area_sub{
+          @media screen and (max-width:320px){
+
+            font-size: 12px;
+
+          }
+        }
       }
       .area_title,.area_address,.area_telphone{
         display: none;
@@ -171,13 +189,4 @@
   }
 
 
-
-
-
-
-
-
-
-
-}
 
