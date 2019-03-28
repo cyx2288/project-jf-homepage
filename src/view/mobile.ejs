@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta content="webkit" name="renderer">
+    <meta name="keywords" content="嘉福平台、嘉福、嘉福福利、税务筹划、员工福利、薪酬管理、企业福利、薪酬福利、福利定制、弹性福利、员工激励、集采、福利培训、礼品采购、职工福利、福利保险、非现金福利、企业福利外包、员工体检、员工健康。">
+    <meta name="description" content="专注在弹性福利领域，面对企业提供服务，帮助企业发放和管理员工福利、奖励。">
+
+    <title>嘉福平台—一站式福利薪酬管理平台</title>
+    <link rel="stylesheet" href="../css/homepage_mobile.css">
+</head>
+<body>
+<div id="homepage_scroll_move">
+    <div id="content_scroll">
+
+
+
+        <div class="content_block content_show">
+
+            <!--第一页-->
+            <%- include('../component/mobile/page_one.ejs') %>
+
+        </div>
+
+
+        <div class="content_block">
+
+            <!--第二页-->
+            <%- include('../component/mobile/page_two.ejs') %>
+
+        </div>
+
+
+        <div class="content_block">
+
+            <!--第三页-->
+            <%- include('../component/mobile/page_three.ejs') %>
+
+        </div>
+
+        <div class="content_block">
+
+            <!--新添加页-->
+            <%- include('../component/mobile/page_add_one.ejs') %>
+
+        </div>
+
+
+        <div class="content_block">
+
+
+            <!--第四页-->
+            <%- include('../component/mobile/page_four.ejs') %>
+
+        </div>
+
+
+        <div class="content_block">
+
+
+            <!--第五页-->
+            <%- include('../component/mobile/page_five.ejs') %>
+
+        </div>
+
+
+        <div class="content_block">
+
+
+            <!--第六页-->
+            <%- include('../component/mobile/page_six.ejs') %>
+
+        </div>
+
+
+        <div class="content_block">
+
+
+            <!--第八页-->
+            <%- include('../component/mobile/page_eight.ejs') %>
+
+        </div>
+
+
+        <div class="content_block">
+
+            <!--第七页-->
+            <%- include('../component/mobile/page_seven.ejs') %>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+</div>
+
+
+<div id="area_block_show" class="area_block_show">
+    <div class="area_message">
+        <div class="area_block_show_title">
+            <div class="show_title">北京</div>
+        </div>
+        <div class="show_delete"><img src="images/page_one/icon-delete.png"></div>
+        <div class="area_block_show_address">地址：北京市朝阳区光华路甲8号和乔大厦A座406室</div>
+        <div class="area_block_show_telphone"><a href="tel:010-57185561">010-57185561</a></div>
+
+
+    </div>
+
+</div>
+
+
+<div class="area_black_box"></div>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/homepage_new2017.js"></script>
+<script src="js/homepage_dev.js"></script>
+</body>
+<script>
+    /*鼠标滚动事件*/
+    var scrollBlockMove = {
+
+        init: function (details) {//主要初始化
+
+            var _this = this;
+
+            _this.thisPosition = 0;//初始化现在在第几个页面
+
+            _this.fn = details;//初始化配置
+
+            _this.isXMove = 1;//是否需要移动
+
+            _this.moveDistance = 0;//移动的距离
+
+            _this.showheight = 30;//可以滚动的高度
+
+
+            var firstTouchesClientY; //初次点击的位置
+
+            var moveTouchesClientY;//移动一段距离后，停止点的位置
+
+            _this.initPoint();//增加右侧导航
+
+
+            document.getElementById('homepage_scroll_move').addEventListener("touchstart", getFirstPosition, false);
+
+            document.getElementById('homepage_scroll_move').addEventListener('touchend', function () {
+                getLastPosition();
+
+                if (_this.isXMove && Math.abs(_this.moveDistance) > _this.showheight) {
+
+                    norXMove();
+
+                    _this.changeScroll(_this.moveDistance)
+
+                }
+
+            }, false);
+
+            document.getElementById('homepage_scroll_move').addEventListener("touchmove", function (event) {
+
+                var evt = event ? event : window.event;
+                evt.preventDefault()
+
+            }, false)
+
+
+            //延迟在变化
+            function norXMove() {
+
+                _this.isXMove = 0;
+
+                setTimeout(function () {
+
+                    _this.isXMove = 1;
+
+                }, 300);
+
+            }
+
+
+            //初始移送的位置
+            function getFirstPosition(event) {
+
+                var evt = event ? event : window.event;
+
+                // evt.preventDefault()
+
+                firstTouchesClientY = parseInt(evt.touches[0].clientY);//当前点击事件距离屏幕顶部的距离(初始位置);
+
+                //console.log(firstTouchesClientY)
+
+            }
+
+            //手指即将离开的位置
+            function getLastPosition(event) {
+
+                var evt = event ? event : window.event;
+
+                //evt.preventDefault()
+
+                moveTouchesClientY = parseInt(evt.changedTouches[0].clientY);//末尾位置;
+
+                _this.moveDistance = moveTouchesClientY - firstTouchesClientY;//最终移动的距离
+
+                // console.log(moveTouchesClientY)
+
+
+            }
+
+
+        },
+
+        initPoint: function () {//初始化右侧导航点
+
+
+            //新建导航点元素
+            var obj = document.createElement('div');
+
+            obj.id = 'content_point';
+
+            var thisNum = document.getElementById('content_scroll').getElementsByClassName('content_block').length;
+
+            //通过有几个页面，设置几个导航点
+            var thisInnerHtml = '<div>';
+
+            for (var i = 0; i < thisNum; i++) {
+
+                if (i == 0) {
+
+                    thisInnerHtml += '<span class="show"></span>';
+                }
+
+                else {
+
+                    thisInnerHtml += '<span></span>';
+
+                }
+
+            }
+
+            thisInnerHtml += '</div>';
+
+            obj.innerHTML = thisInnerHtml;
+
+            //添加元素
+            document.getElementById('homepage_scroll_move').appendChild(obj);
+
+            //每个导航点添加监听
+            var allPoint = document.getElementById('content_point').getElementsByTagName('span');
+
+            for (var i = 0; i < allPoint.length; i++) {
+
+                allPoint[i].addEventListener('click', this.clickPoint, false)
+
+            }
+
+        },
+
+        clickPoint: function (event) {//绑定的点击事件
+
+            var allPoint = document.getElementById('content_point').getElementsByTagName('div')[0].getElementsByTagName('span');
+
+            //返回点击的是第几个元素
+            for (var i = 0; i < allPoint.length; i++) {
+
+                if (this == allPoint[i]) {
+
+                    break;
+
+                }
+
+            }
+
+            var thisNeedMove = i + scrollBlockMove.thisPosition;//需要移动的位置
+
+
+            //计算移动的绝对值
+            if (thisNeedMove != 0) {
+
+                for (var i = 0; i < Math.abs(thisNeedMove); i++) {
+
+                    scrollBlockMove.changeScroll(-thisNeedMove);
+
+                }
+
+            }
+
+        },
+
+        changeScroll: function (position) {//改变位置，参数正负为是否上下移动
+
+
+            var pointBlock = document.getElementById('content_point');
+
+            var changeBlock = document.getElementById('content_scroll');
+
+            var _this = this;
+
+            var thisNum = document.getElementById('content_scroll').getElementsByClassName('content_block').length - 1;
+
+            //如果向下滚动，则不能超过最大页面个数
+            if (parseFloat(position) < 0) {
+
+                _this.thisPosition > -thisNum ? _this.thisPosition-- : _this.thisPosition = -thisNum;
+
+            }
+
+            //如果向上滚动，不能超过最上面
+            else if (parseFloat(position) > 0) {
+
+                _this.thisPosition < 0 ? _this.thisPosition++ : _this.thisPosition = 0;
+
+            }
+
+            _this.changeTransform(document.getElementById('content_scroll'), 100 * this.thisPosition + '%');//变化到指定位置
+
+            //变化点的位置
+            pointBlock.getElementsByClassName('show')[0].className = pointBlock.getElementsByClassName('show')[0].className.replace('show', '');
+
+            pointBlock.getElementsByTagName('span')[-this.thisPosition].className += ' show';
+
+            //变化页面的位置
+            changeBlock.getElementsByClassName('content_show')[0].className = changeBlock.getElementsByClassName('content_show')[0].className.replace(' content_show', '');
+
+            changeBlock.getElementsByClassName('content_block')[-this.thisPosition].className += ' content_show';
+
+        },
+
+        changeTransform: function (ele, num) {//位置变化的方法
+
+            ele.style.transform = 'translateY(' + num + ')';
+
+            ele.style.oTransform = 'translateY(' + num + ')';
+
+            ele.style.mozTransform = 'translateY(' + num + ')';
+
+            ele.style.webkitTransform = 'translateY(' + num + ')';
+
+            ele.style.msTransform = 'translateY(' + num + ')'
+
+        }
+
+    };
+
+    var jfshakeMove = {
+
+        varInit: {
+
+            'canMove': true
+
+        },
+
+        init: function () {
+
+            //判断是否是手机晃动事件
+            if (window.DeviceOrientationEvent) {
+
+                window.addEventListener('deviceorientation', this.mouseMove.bind(this), false);
+
+                this.android(0.3)
+            }
+
+        },
+
+
+
+        mouseMove: function (event) {
+
+            var event = event || window.event;
+
+            var delB = event.beta;    // beta轴偏转角（绕x轴旋转的角度）
+
+            var delG = event.gamma;    // gamma轴偏转角(绕y轴旋转的角度)
+
+            if (delB && delG && this.varInit.canMove) {
+
+                this.beta = event.beta;
+
+                this.gamma = event.gamma;
+
+                this.varInit.canMove = false;
+
+            }
+
+            if (delB != null || delG != null) {
+
+                var allMoveEle = document.getElementsByClassName('moveEle');
+
+                //初始化移动的权重
+                var distanceW = 1;
+
+                for (var i = 0; i < allMoveEle.length; i++) {
+
+                    //获取当前元素权重
+                    distanceW = allMoveEle[i].getAttribute('data-distanceW');
+
+                    if (distanceW && Math.abs(delG - this.gamma) <= 60 && Math.abs(delB - this.beta) <= 120) {
+                        //设置偏移
+                        this.transformAll(allMoveEle[i], ((delG - this.gamma) / 1.5) * distanceW, ((delB - this.beta) / 3) * distanceW);
+
+                        this.transformX = ((delG - this.gamma) / 1.5);
+
+                        this.transformY = ((delB - this.beta) / 3);
+
+                    }
+
+                    else if (distanceW && Math.abs(delG - this.gamma) <= 60 && Math.abs(delB - this.beta) > 120) {
+                        //设置偏移
+                        this.transformAll(allMoveEle[i], ((delG - this.gamma) / 1.5) * distanceW, this.transformY* distanceW);
+
+                    }
+
+                    else if (distanceW && Math.abs(delG - this.gamma) > 60 && Math.abs(delB - this.beta) <= 120) {
+                        //设置偏移
+                        this.transformAll(allMoveEle[i], this.transformX* distanceW, ((delB - this.beta) / 3) * distanceW);
+
+                    }
+
+                    else{
+
+                        this.transformAll(allMoveEle[i], this.transformX* distanceW, this.transformY* distanceW);
+
+                    }
+                    //初始化偏移
+                    distanceW = 1;
+
+                }
+
+            }
+
+        },
+
+        //通用变化兼容性
+        transformAll: function (ele, disX, disY) {
+
+            setTimeout(function () {
+                ele.style.transform = 'translate(' + disX + 'px,' + disY + 'px)';
+
+                ele.style.webkitTransform = 'translate(' + disX + 'px,' + disY + 'px)';
+
+            }, 200);
+        },
+
+        android: function (ms) {
+
+            var u = navigator.userAgent;
+
+            if (!!u.match(/Android/i)) {//安卓机型
+
+                var allMoveEle = document.getElementsByClassName('moveEle');//当前所有可以的移动的元素
+
+                for (var i = 0; i < allMoveEle.length; i++) {
+
+                    allMoveEle[i].style.transition = "transform "+ms+"s linear";
+
+                    allMoveEle[i].style.webkitTransform = "-webkit-transition "+ms+"s linear";
+                }
+
+            }
+
+        }
+
+
+    };
+
+    jfshakeMove.init();
+    scrollBlockMove.init();
+
+
+    function judgeBrowserJump() {
+
+        if (browser.supplier.wechat) {  //判断是否微信内置浏览器
+
+            window.location.href = "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5Nzk2OTQ1MA==#wechat_redirect";
+
+        }
+        else {
+            window.location.href = "http://www.jia-fu.cn/download/app";
+        }
+
+    }
+
+
+    //确认订单上拉框
+
+    var orderDragUp = new jfFrameDrag.dragEleshow({
+
+        "targetButton": "service_telephone",//点击的目标元素。ID选择器
+
+        // "targetDragName":"frame_checkorder",//出现的目标元素，calss选择器
+
+        "hideButton": "drop_down_delete"//关闭按钮，class选择器
+
+    });
+
+
+
+    /*地址选择弹出框*/
+    $('.frame').on('click',function () {
+
+        $('#area_block_show').css('display','block')
+
+
+        setTimeout(function () {
+            $('#area_block_show').addClass('show');
+
+            $('.area_black_box').addClass('show');
+        },10);
+
+
+        $('.area_black_box').css('display','block')
+
+
+
+
+        $('#area_block_show').find('.area_block_show_title').html(
+            $(this).find('.area_title').html()
+        );
+
+        $('#area_block_show').find('.area_block_show_address').html(
+            $(this).find('.area_address').html()
+        );
+
+        $('#area_block_show').find('.area_block_show_telphone').html(
+            $(this).find('.area_telphone').html()
+        );
+
+    })
+
+    $('.show_delete').on('click',function () {
+
+
+
+        $('.area_black_box').css('display','none').removeClass('show');
+
+        $('#area_block_show').css('display','none').removeClass('show');
+    })
+
+    $('.area_black_box').on('click',function () {
+
+
+
+
+        $('.area_black_box').css('display','none').removeClass('show');
+
+        $('#area_block_show').css('display','none').removeClass('show');
+
+    })
+
+
+
+
+
+
+
+
+</script>
+
+</html>

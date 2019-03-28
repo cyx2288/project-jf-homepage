@@ -246,7 +246,7 @@ function devServer() {
 
         root: 'build',//目录
 
-        //host: "192.168.120.40",//ip
+        host: "192.168.120.25",//ip
 
         port: 1717,//端口
 
