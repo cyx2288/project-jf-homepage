@@ -6,7 +6,6 @@
 @colorWhite: #fff;
 @clickEffect: hsla(0, 0%, 100%, 0.8);
 @clickColorBlue: #0994cc;
-
 .open_platform {
   position: relative;
   width: 100%;
@@ -112,5 +111,13 @@
   }
   .open_platform .banner_bg {
     height: 600px;
+  }
+}
+
+@media screen and (min-width:1460px) {
+  .open_platform {
+    .banner_bg{
+      background-size: 100% 85%;
+    }
   }
 }

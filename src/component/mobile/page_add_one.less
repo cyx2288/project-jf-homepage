@@ -1,0 +1,204 @@
+.content_block .page_add_one {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url("../images/page_four/icon-background.png") no-repeat;
+  background-size: 100% 100%;
+  padding: 40px 0 30px;
+  box-sizing: border-box;
+
+  .page_add_one_title{
+    text-align: center;
+    .title{
+      font-size: 30px;
+      color: #4a4a4a;
+      font-weight: 700;
+    }
+    .img{
+      width: 60%;
+      margin: 0 auto -10px;
+      img{
+        width: 100%;
+      }
+    }
+    .subhead{
+      font-size: 16px;
+      color: #ababab;
+    }
+  }
+
+  .page_add_one_picture{
+    width: 200px;
+    height: 150px;
+    margin: 15px auto 0;
+    background: url("../images/page_add_one/icon-arrow.png") no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    position: relative;
+    .img{
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    @keyframes shake{
+
+      0% {opacity: 1;}
+      50% {opacity: 0;}
+      100% {opacity: 1;}
+
+    }
+    .img_animation{
+      display: inline-block;
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: shake 5s infinite;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .page_add_one_benefit{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 2%;
+    .benefit{
+      width: 31%;
+      height: 150px;
+      text-align: center;
+      flex: 1;
+      margin: 0 1%;
+      flex-shrink: 0;
+      border: 1px solid #ababab;
+      border-radius: 8px;
+      box-sizing: border-box;
+      position: relative;
+      padding-top: 40px;
+      .benefit_img{
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .title{
+        font-size: 14px;
+        color: #4a4a4a;
+        font-weight: 700;
+      }
+      .content{
+        font-size: 12px;
+        color: #ababab;
+      }
+    }
+  }
+}
+@media screen and (max-height: 670px){
+  .content_block .page_add_one{
+    padding: 20px 0;
+  }
+  .content_block .page_add_one .page_add_one_picture{
+    margin-bottom: 15px;
+  }
+  .content_block .page_add_one .page_add_one_benefit+.page_add_one_benefit{
+    margin-top: auto;
+  }
+}
+@media screen and (max-height: 570px){
+  .content_block .page_add_one{
+    padding: 20px 0 25px;
+  }
+  .content_block .page_add_one .page_add_one_picture{
+    width: 180px;
+    height: 120px;
+    margin-bottom: 12px;
+    .img{
+      width: 75px;
+      height: 75px;
+    }
+    .img_animation{
+      width: 28px;
+      height: 28px;
+    }
+  }
+  .content_block .page_add_one .page_add_one_benefit .benefit{
+    height: 130px;
+    padding-top: 30px;
+    .benefit_img{
+      width: 60px;
+      height: 60px;
+    }
+    .benefit_detail{
+      .title{
+        font-size: 12px;
+      }
+    }
+  }
+
+}
+@media screen and (max-height: 630px){
+
+  .content_block .page_add_one .page_add_one_picture{
+    margin: 0 auto;
+  }
+  .content_block .page_add_one .page_add_one_benefit .benefit{
+    height: 140px;
+  }
+  .content_block .page_add_one .page_add_one_benefit+.page_add_one_benefit{
+    margin-top: 20px;
+  }
+}
+@media screen and (min-height: 800px){
+
+  .content_block .page_add_one{
+    padding-bottom: 50px;
+    .page_add_one_picture{
+      margin-top: -10px;
+    }
+  }
+
+}
+@keyframes titleshow {
+  0%,50% {transform: translateY(100%); opacity: 0;}
+  100% {transform: translateY(0); opacity: 1;}
+}
+@keyframes testoneshow {
+  0%,66% {transform: translateY(100vh);}
+  100% {transform: translateY(0);}
+}
+@keyframes testtwoshow {
+  0%,75% {transform: translateY(100vh);}
+  100% {transform: translateY(0);}
+}
+.content_show{
+  .page_add_one{
+    .page_add_one_title{
+      animation: titleshow 1.5s;
+    }
+    .page_add_one_picture{
+      animation: titleshow 2s;
+    }
+    .test_one{
+      animation: testoneshow 2s;
+    }
+    .test_two{
+      animation: testtwoshow 2.5s;
+    }
+  }
+}

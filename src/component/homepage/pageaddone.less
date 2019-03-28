@@ -1,0 +1,288 @@
+.content_block{
+
+  .jf_page_add_medical{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #f5fbff;
+
+    .medical_bg{
+      height: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      .page_add_content{
+        position: absolute;
+        height: 800px;
+        top: 50%;
+        left: 50%;
+        margin: -400px 0 0 -537px;
+
+        .page_add_title{
+          position: relative;
+
+
+          .title_img{
+            background-image: url("../images/page_add_one/medical_bg.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            width: 600px;
+            height: 98px;
+            margin: 0 auto;
+          }
+          .title_text{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            color: #4a4a4a;
+            font-size: 24px;
+            font-weight: 700;
+          }
+          &>div:last-child{
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            bottom: -8px;
+            left: 0;
+          }
+        }
+
+        .text_main{
+
+          .box_three{
+            margin: 50px auto;
+            width: 1200px;
+            &:after{
+              content: '';
+              display: block;
+              clear: both;
+            }
+            .box{
+              float: left;
+              width: 340px;
+              height: 200px;
+              margin: 0 30px;
+              border: 1px solid #ababab;
+              box-sizing: border-box;
+              overflow: hidden;
+              .face{
+                font-size: 20px;
+                color: #4a4a4a;
+                font-weight: 700;
+              }
+              .back{
+                font-size: 16px;
+              }
+              &:hover{
+                border: 1px solid #4dbde5;
+                box-shadow: #00b4f9 0 0 3px;
+              }
+              &:hover>.face{
+                transform: translateY(-100%);
+              }
+              &:hover>.back{
+                transform: translateY(-100%);
+                font-size: 16px;
+                line-height: 26px;
+              }
+              .face,.back{
+                position: relative;
+                color: #4a4a4a;
+                transform: translateY(0);
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                transition: all 0.5s;
+                &>div{
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%,-50%);
+                  &>div{
+                    white-space: nowrap;
+                  }
+                }
+              }
+            }
+
+          }
+
+          .flow{
+
+            .flow_title{
+              font-size: 20px;
+              text-align: center;
+              color: #4a4a4a;
+              font-weight: 700;
+            }
+
+            .flow_detail{
+              height: 300px;
+              position: relative;
+              padding: 0 10%;
+              &:before{
+                content: '';
+                position: absolute;
+                left: 10%;
+                top: 50%;
+                transform: translateY(-50%);
+                display: block;
+                width: 80%;
+                border-top: 1px solid #ababab;
+              }
+              &>div{
+                float: left;
+                border: 1px solid #4dbde5;
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+                background-color: white;
+                margin: 0 9%;
+                z-index: 2;
+                transform: translateY(145px);
+                &>div{
+                  position: absolute;
+                  transform: translateX(-40px);
+                  color: #4a4a4a;
+                  &:hover>.introduce>.title{
+                    color: #0392d4;
+                  }
+                  .icon{
+                    position: absolute;
+                    border: 1px solid #ababab;
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 50%;
+                    top: 7px;
+                    left: 7px;
+                    img{
+                      height: 60%;
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%,-50%);
+                    }
+                  }
+                  .introduce{
+                    position: absolute;
+                    left: 85px;
+                    top: 7px;
+                    &>div{
+                      font-size: 16px;
+                      white-space: nowrap;
+                      line-height: 25px;
+                    }
+                    .title{
+                      font-size: 16px;
+                      font-weight: 700;
+                    }
+                    .content{
+                      font-size: 14px;
+                    }
+                  }
+                }
+                &.flow_one,&.flow_three,&.flow_five{
+                  &>div{
+                    bottom: 30px;
+                  }
+                }
+                &.flow_two,&.flow_four{
+                  &>div{
+                    top: 30px;
+                  }
+                }
+                .background_round{
+                  position: relative;
+                  border: 1px solid #4dbde5;
+                  width: 78px;
+                  height: 78px;
+                  border-radius: 50%;
+                  &:before{
+                    content: '';
+                    position: absolute;
+                    width: 80px;
+                    height: 22px;
+                    top: -3px;
+                    left: 0;
+                    display: block;
+                    background-color: #f5fbff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+
+      @media screen and (max-width: 1690px) {
+        .page_add_content {
+          top:50%;
+          left: 50%;
+          margin: -300px 0 0 -535px;
+        }
+      }
+      @media screen and (max-width: 1374px) {
+        .page_add_content {
+          top:50%;
+          left: 50%;
+          //margin: -300px 0 0 -535px;
+          margin: -260px 0 0 -535px;
+        }
+      }
+    }
+
+  }
+  @media screen and (max-width: 1366px){
+
+    .jf_page_add_medical .medical_bg .page_add_content .text_main .box_three{
+      margin: 20px auto;
+      width: 990px;
+      .box{
+        width: 300px;
+        height: 160px;
+        margin: 0 15px;
+      }
+
+    }
+    .jf_page_add_medical .medical_bg .page_add_content .text_main .flow .flow_detail {
+      padding: 0 5%;
+      height: 250px;
+      &>div{
+        transform: translateY(120px);
+      }
+    }
+
+  }
+
+}
+.content_show{
+  @keyframes boxShow {
+
+    from {transform: translateY(200%);}
+    to {transform: translateY(0);}
+
+  }
+  @keyframes titleShow {
+
+    from {opacity: 0;}
+    to {opacity: 1;}
+
+  }
+  .page_add_title{
+    animation: titleShow 3s;
+  }
+  .box_three{
+    animation: boxShow 2s;
+  }
+  .flow{
+    animation: boxShow 4s;
+  }
+}
