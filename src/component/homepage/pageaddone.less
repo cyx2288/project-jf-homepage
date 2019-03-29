@@ -181,9 +181,11 @@
                     .title{
                       font-size: 16px;
                       font-weight: 700;
+                      margin-bottom: 10px;
                     }
                     .content{
                       font-size: 14px;
+                      line-height: 16px;
                     }
                   }
                 }
@@ -240,15 +242,32 @@
     }
 
   }
+  @media screen and (min-height: 900px){
+
+    .jf_page_add_medical .medical_bg .page_add_content .text_main .box_three{
+
+      margin-top: 75px;
+
+    }
+
+  }
   @media screen and (max-width: 1366px){
 
     .jf_page_add_medical .medical_bg .page_add_content .text_main .box_three{
       margin: 20px auto;
       width: 990px;
       .box{
-        width: 300px;
-        height: 160px;
-        margin: 0 15px;
+        width: 260px;
+        height: 140px;
+        margin: 0 35px;
+        .back{
+          font-size: 12px;
+          line-height: 16px;
+        }
+        &:hover>.back{
+          font-size: 12px;
+          line-height: 20px;
+        }
       }
 
     }
@@ -257,6 +276,13 @@
       height: 250px;
       &>div{
         transform: translateY(120px);
+        div{
+          .introduce{
+            .content{
+              font-size: 12px;
+            }
+          }
+        }
       }
     }
 
